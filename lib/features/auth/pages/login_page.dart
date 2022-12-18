@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiki_admin/features/auth/infrastructure/bloc/login_bloc/login_bloc.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../shared/enums/enums.dart';
 import '../../../shared/theme/theme.dart';
+import '../../../shared/widgets/shiki_auth_text_field.dart';
 import '../widgets/guilds_drop_down_button.dart';
 
 class LoginPage extends StatelessWidget {
@@ -49,12 +51,16 @@ class LoginPage extends StatelessWidget {
                             .copyWith(fontSize: 12.sp)),
                     Column(
                       children: [
-                        TextField(
+                        AuthPageInput(
+                          inputType: InputTypes.email,
+                          label: "Email",
                           onChanged: (email) => context.read<LoginBloc>().add(
                                 LoginEvent.emailChange(email: email),
                               ),
                         ),
-                        TextField(
+                        AuthPageInput(
+                          inputType: InputTypes.password,
+                          label: "Password",
                           onChanged: (password) => context
                               .read<LoginBloc>()
                               .add(

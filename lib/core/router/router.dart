@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/empty_router_widgets.dart';
 import 'package:shiki_admin/features/auth/pages/login_screen.dart';
 
-import '../../features/auth/pages/login_page.dart';
 import '../../features/users/users_page.dart';
 import '../../main_route_page.dart';
 
