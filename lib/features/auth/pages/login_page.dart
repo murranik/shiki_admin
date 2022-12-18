@@ -49,25 +49,22 @@ class LoginPage extends StatelessWidget {
                         style: TextStyleHelper.get(context)
                             .defaultTextStyle
                             .copyWith(fontSize: 12.sp)),
-                    Column(
-                      children: [
-                        AuthPageInput(
-                          inputType: InputTypes.email,
-                          label: "Email",
-                          onChanged: (email) => context.read<LoginBloc>().add(
-                                LoginEvent.emailChange(email: email),
-                              ),
-                        ),
-                        AuthPageInput(
-                          inputType: InputTypes.password,
-                          label: "Password",
-                          onChanged: (password) => context
-                              .read<LoginBloc>()
-                              .add(
-                                LoginEvent.passwordChanged(password: password),
-                              ),
-                        )
-                      ],
+                    AuthPageInput(
+                      inputType: InputTypes.email,
+                      label: "Email",
+                      onChanged: (email) => context.read<LoginBloc>().add(
+                            LoginEvent.emailChange(email: email),
+                          ),
+                    ),
+                    AuthPageInput(
+                      inputType: InputTypes.password,
+                      label: "Password",
+                      onChanged: (password) => context.read<LoginBloc>().add(
+                            LoginEvent.passwordChanged(password: password),
+                          ),
+                    ),
+                    SizedBox(
+                      height: 16,
                     ),
                     GuildsDropDownButton(
                       guildIdCallback: (String newGuildId) {},
