@@ -6,7 +6,6 @@ class LoginState with _$LoginState {
     @Default(EmailInput.pure()) EmailInput email,
     @Default(PasswordInput.pure()) PasswordInput password,
     @Default(FormzStatus.pure) FormzStatus status,
-    @Default([]) List<Guild> guilds,
     String? guildId,
     String? errorMessage,
   }) = _LoginState;

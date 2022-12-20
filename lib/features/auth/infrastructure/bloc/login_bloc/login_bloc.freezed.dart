@@ -20,18 +20,24 @@ mixin _$LoginEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailChange,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(String guildId) guildChoosed,
+    required TResult Function() submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email)? emailChange,
     TResult? Function(String password)? passwordChanged,
+    TResult? Function(String guildId)? guildChoosed,
+    TResult? Function()? submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailChange,
     TResult Function(String password)? passwordChanged,
+    TResult Function(String guildId)? guildChoosed,
+    TResult Function()? submit,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +45,24 @@ mixin _$LoginEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_EmailChange value) emailChange,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_GuildChoosed value) guildChoosed,
+    required TResult Function(_Submit value) submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_EmailChange value)? emailChange,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_GuildChoosed value)? guildChoosed,
+    TResult? Function(_Submit value)? submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EmailChange value)? emailChange,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_GuildChoosed value)? guildChoosed,
+    TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,6 +152,8 @@ class _$_EmailChange implements _EmailChange {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailChange,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(String guildId) guildChoosed,
+    required TResult Function() submit,
   }) {
     return emailChange(email);
   }
@@ -149,6 +163,8 @@ class _$_EmailChange implements _EmailChange {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email)? emailChange,
     TResult? Function(String password)? passwordChanged,
+    TResult? Function(String guildId)? guildChoosed,
+    TResult? Function()? submit,
   }) {
     return emailChange?.call(email);
   }
@@ -158,6 +174,8 @@ class _$_EmailChange implements _EmailChange {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailChange,
     TResult Function(String password)? passwordChanged,
+    TResult Function(String guildId)? guildChoosed,
+    TResult Function()? submit,
     required TResult orElse(),
   }) {
     if (emailChange != null) {
@@ -171,6 +189,8 @@ class _$_EmailChange implements _EmailChange {
   TResult map<TResult extends Object?>({
     required TResult Function(_EmailChange value) emailChange,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_GuildChoosed value) guildChoosed,
+    required TResult Function(_Submit value) submit,
   }) {
     return emailChange(this);
   }
@@ -180,6 +200,8 @@ class _$_EmailChange implements _EmailChange {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_EmailChange value)? emailChange,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_GuildChoosed value)? guildChoosed,
+    TResult? Function(_Submit value)? submit,
   }) {
     return emailChange?.call(this);
   }
@@ -189,6 +211,8 @@ class _$_EmailChange implements _EmailChange {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EmailChange value)? emailChange,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_GuildChoosed value)? guildChoosed,
+    TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
     if (emailChange != null) {
@@ -274,6 +298,8 @@ class _$_PasswordChanged implements _PasswordChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailChange,
     required TResult Function(String password) passwordChanged,
+    required TResult Function(String guildId) guildChoosed,
+    required TResult Function() submit,
   }) {
     return passwordChanged(password);
   }
@@ -283,6 +309,8 @@ class _$_PasswordChanged implements _PasswordChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email)? emailChange,
     TResult? Function(String password)? passwordChanged,
+    TResult? Function(String guildId)? guildChoosed,
+    TResult? Function()? submit,
   }) {
     return passwordChanged?.call(password);
   }
@@ -292,6 +320,8 @@ class _$_PasswordChanged implements _PasswordChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailChange,
     TResult Function(String password)? passwordChanged,
+    TResult Function(String guildId)? guildChoosed,
+    TResult Function()? submit,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -305,6 +335,8 @@ class _$_PasswordChanged implements _PasswordChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_EmailChange value) emailChange,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_GuildChoosed value) guildChoosed,
+    required TResult Function(_Submit value) submit,
   }) {
     return passwordChanged(this);
   }
@@ -314,6 +346,8 @@ class _$_PasswordChanged implements _PasswordChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_EmailChange value)? emailChange,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_GuildChoosed value)? guildChoosed,
+    TResult? Function(_Submit value)? submit,
   }) {
     return passwordChanged?.call(this);
   }
@@ -323,6 +357,8 @@ class _$_PasswordChanged implements _PasswordChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EmailChange value)? emailChange,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_GuildChoosed value)? guildChoosed,
+    TResult Function(_Submit value)? submit,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -343,11 +379,268 @@ abstract class _PasswordChanged implements LoginEvent {
 }
 
 /// @nodoc
+abstract class _$$_GuildChoosedCopyWith<$Res> {
+  factory _$$_GuildChoosedCopyWith(
+          _$_GuildChoosed value, $Res Function(_$_GuildChoosed) then) =
+      __$$_GuildChoosedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String guildId});
+}
+
+/// @nodoc
+class __$$_GuildChoosedCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$_GuildChoosed>
+    implements _$$_GuildChoosedCopyWith<$Res> {
+  __$$_GuildChoosedCopyWithImpl(
+      _$_GuildChoosed _value, $Res Function(_$_GuildChoosed) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? guildId = null,
+  }) {
+    return _then(_$_GuildChoosed(
+      guildId: null == guildId
+          ? _value.guildId
+          : guildId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GuildChoosed implements _GuildChoosed {
+  const _$_GuildChoosed({required this.guildId});
+
+  @override
+  final String guildId;
+
+  @override
+  String toString() {
+    return 'LoginEvent.guildChoosed(guildId: $guildId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_GuildChoosed &&
+            (identical(other.guildId, guildId) || other.guildId == guildId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, guildId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_GuildChoosedCopyWith<_$_GuildChoosed> get copyWith =>
+      __$$_GuildChoosedCopyWithImpl<_$_GuildChoosed>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChange,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String guildId) guildChoosed,
+    required TResult Function() submit,
+  }) {
+    return guildChoosed(guildId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email)? emailChange,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(String guildId)? guildChoosed,
+    TResult? Function()? submit,
+  }) {
+    return guildChoosed?.call(guildId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChange,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String guildId)? guildChoosed,
+    TResult Function()? submit,
+    required TResult orElse(),
+  }) {
+    if (guildChoosed != null) {
+      return guildChoosed(guildId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EmailChange value) emailChange,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_GuildChoosed value) guildChoosed,
+    required TResult Function(_Submit value) submit,
+  }) {
+    return guildChoosed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_EmailChange value)? emailChange,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_GuildChoosed value)? guildChoosed,
+    TResult? Function(_Submit value)? submit,
+  }) {
+    return guildChoosed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EmailChange value)? emailChange,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_GuildChoosed value)? guildChoosed,
+    TResult Function(_Submit value)? submit,
+    required TResult orElse(),
+  }) {
+    if (guildChoosed != null) {
+      return guildChoosed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GuildChoosed implements LoginEvent {
+  const factory _GuildChoosed({required final String guildId}) =
+      _$_GuildChoosed;
+
+  String get guildId;
+  @JsonKey(ignore: true)
+  _$$_GuildChoosedCopyWith<_$_GuildChoosed> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_SubmitCopyWith<$Res> {
+  factory _$$_SubmitCopyWith(_$_Submit value, $Res Function(_$_Submit) then) =
+      __$$_SubmitCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_SubmitCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$_Submit>
+    implements _$$_SubmitCopyWith<$Res> {
+  __$$_SubmitCopyWithImpl(_$_Submit _value, $Res Function(_$_Submit) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_Submit implements _Submit {
+  const _$_Submit();
+
+  @override
+  String toString() {
+    return 'LoginEvent.submit()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Submit);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChange,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String guildId) guildChoosed,
+    required TResult Function() submit,
+  }) {
+    return submit();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email)? emailChange,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(String guildId)? guildChoosed,
+    TResult? Function()? submit,
+  }) {
+    return submit?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChange,
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String guildId)? guildChoosed,
+    TResult Function()? submit,
+    required TResult orElse(),
+  }) {
+    if (submit != null) {
+      return submit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EmailChange value) emailChange,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_GuildChoosed value) guildChoosed,
+    required TResult Function(_Submit value) submit,
+  }) {
+    return submit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_EmailChange value)? emailChange,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_GuildChoosed value)? guildChoosed,
+    TResult? Function(_Submit value)? submit,
+  }) {
+    return submit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EmailChange value)? emailChange,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_GuildChoosed value)? guildChoosed,
+    TResult Function(_Submit value)? submit,
+    required TResult orElse(),
+  }) {
+    if (submit != null) {
+      return submit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Submit implements LoginEvent {
+  const factory _Submit() = _$_Submit;
+}
+
+/// @nodoc
 mixin _$LoginState {
   EmailInput get email => throw _privateConstructorUsedError;
   PasswordInput get password => throw _privateConstructorUsedError;
   FormzStatus get status => throw _privateConstructorUsedError;
-  List<Guild> get guilds => throw _privateConstructorUsedError;
   String? get guildId => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
@@ -366,7 +659,6 @@ abstract class $LoginStateCopyWith<$Res> {
       {EmailInput email,
       PasswordInput password,
       FormzStatus status,
-      List<Guild> guilds,
       String? guildId,
       String? errorMessage});
 }
@@ -387,7 +679,6 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
     Object? email = null,
     Object? password = null,
     Object? status = null,
-    Object? guilds = null,
     Object? guildId = freezed,
     Object? errorMessage = freezed,
   }) {
@@ -404,10 +695,6 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as FormzStatus,
-      guilds: null == guilds
-          ? _value.guilds
-          : guilds // ignore: cast_nullable_to_non_nullable
-              as List<Guild>,
       guildId: freezed == guildId
           ? _value.guildId
           : guildId // ignore: cast_nullable_to_non_nullable
@@ -432,7 +719,6 @@ abstract class _$$_LoginStateCopyWith<$Res>
       {EmailInput email,
       PasswordInput password,
       FormzStatus status,
-      List<Guild> guilds,
       String? guildId,
       String? errorMessage});
 }
@@ -451,7 +737,6 @@ class __$$_LoginStateCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
     Object? status = null,
-    Object? guilds = null,
     Object? guildId = freezed,
     Object? errorMessage = freezed,
   }) {
@@ -468,10 +753,6 @@ class __$$_LoginStateCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as FormzStatus,
-      guilds: null == guilds
-          ? _value._guilds
-          : guilds // ignore: cast_nullable_to_non_nullable
-              as List<Guild>,
       guildId: freezed == guildId
           ? _value.guildId
           : guildId // ignore: cast_nullable_to_non_nullable
@@ -491,10 +772,8 @@ class _$_LoginState implements _LoginState {
       {this.email = const EmailInput.pure(),
       this.password = const PasswordInput.pure(),
       this.status = FormzStatus.pure,
-      final List<Guild> guilds = const [],
       this.guildId,
-      this.errorMessage})
-      : _guilds = guilds;
+      this.errorMessage});
 
   @override
   @JsonKey()
@@ -505,15 +784,6 @@ class _$_LoginState implements _LoginState {
   @override
   @JsonKey()
   final FormzStatus status;
-  final List<Guild> _guilds;
-  @override
-  @JsonKey()
-  List<Guild> get guilds {
-    if (_guilds is EqualUnmodifiableListView) return _guilds;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_guilds);
-  }
-
   @override
   final String? guildId;
   @override
@@ -521,7 +791,7 @@ class _$_LoginState implements _LoginState {
 
   @override
   String toString() {
-    return 'LoginState(email: $email, password: $password, status: $status, guilds: $guilds, guildId: $guildId, errorMessage: $errorMessage)';
+    return 'LoginState(email: $email, password: $password, status: $status, guildId: $guildId, errorMessage: $errorMessage)';
   }
 
   @override
@@ -533,15 +803,14 @@ class _$_LoginState implements _LoginState {
             (identical(other.password, password) ||
                 other.password == password) &&
             (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality().equals(other._guilds, _guilds) &&
             (identical(other.guildId, guildId) || other.guildId == guildId) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, password, status,
-      const DeepCollectionEquality().hash(_guilds), guildId, errorMessage);
+  int get hashCode =>
+      Object.hash(runtimeType, email, password, status, guildId, errorMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -555,7 +824,6 @@ abstract class _LoginState implements LoginState {
       {final EmailInput email,
       final PasswordInput password,
       final FormzStatus status,
-      final List<Guild> guilds,
       final String? guildId,
       final String? errorMessage}) = _$_LoginState;
 
@@ -565,8 +833,6 @@ abstract class _LoginState implements LoginState {
   PasswordInput get password;
   @override
   FormzStatus get status;
-  @override
-  List<Guild> get guilds;
   @override
   String? get guildId;
   @override

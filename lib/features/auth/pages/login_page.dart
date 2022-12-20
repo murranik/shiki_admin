@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiki_admin/features/auth/infrastructure/bloc/login_bloc/login_bloc.dart';
+import 'package:shiki_admin/features/guilds/infrastructure/blocs/guilds_bloc.dart';
+import 'package:shiki_admin/shared/constants/spacings.dart';
+import 'package:shiki_admin/shared/widgets/spaces.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../shared/enums/enums.dart';
@@ -63,42 +66,29 @@ class LoginPage extends StatelessWidget {
                             LoginEvent.passwordChanged(password: password),
                           ),
                     ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    GuildsDropDownButton(
-                      guildIdCallback: (String newGuildId) {},
-                      guilds: state.guilds,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.all(3.sp),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(7),
-                                border: Border.all(
-                                    color: ThemeManager.getTheme(context)
-                                        .activeColor)),
-                            child: InkWell(
-                              mouseCursor: SystemMouseCursors.click,
-                              borderRadius: BorderRadius.circular(25),
-                              onTap: () {},
-                              child: Container(
-                                padding: EdgeInsets.symmetric(vertical: 2.sp),
-                                child: Text(
-                                  "Continue",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyleHelper.get(context)
-                                      .defaultTextInputStyle
-                                      .copyWith(fontSize: 6.sp),
-                                ),
-                              ),
-                            ),
+                    const VSpace(SpacingStatic.s15),
+                    BlocBuilder<GuildsBloc, GuildsState>(
+                      builder: (BuildContext context, state) {
+                        return state.maybeMap(
+                          loaded: (loaded) => GuildsDropDownButton(
+                            guildIdCallback: (String newGuildId) {
+                              context.read<LoginBloc>().add(
+                                    LoginEvent.guildChoosed(
+                                      guildId: newGuildId,
+                                    ),
+                                  );
+                            },
+                            guilds: loaded.guilds,
                           ),
-                        ),
-                      ],
+                          orElse: () {
+                            return CircularProgressIndicator(
+                              color: ThemeManager.getTheme(context).activeColor,
+                            );
+                          },
+                        );
+                      },
                     ),
+                    const _LoginButton()
                   ],
                 ),
               ),
@@ -106,6 +96,44 @@ class LoginPage extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class _LoginButton extends StatelessWidget {
+  const _LoginButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: Container(
+            margin: EdgeInsets.all(3.sp),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(7),
+                border: Border.all(
+                    color: ThemeManager.getTheme(context).activeColor)),
+            child: InkWell(
+              mouseCursor: SystemMouseCursors.click,
+              borderRadius: BorderRadius.circular(25),
+              onTap: () {
+                context.read<LoginBloc>().add(const LoginEvent.submit());
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 2.sp),
+                child: Text(
+                  "Continue",
+                  textAlign: TextAlign.center,
+                  style: TextStyleHelper.get(context)
+                      .defaultTextInputStyle
+                      .copyWith(fontSize: 6.sp),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

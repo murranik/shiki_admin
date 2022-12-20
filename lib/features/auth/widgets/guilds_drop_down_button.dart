@@ -1,12 +1,13 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:shiki_admin/features/auth/infrastructure/data/data.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../shared/theme/theme.dart';
 
 class GuildsDropDownButton extends StatelessWidget {
   final Function guildIdCallback;
-  final List<dynamic> guilds;
+  final List<Guild> guilds;
   const GuildsDropDownButton(
       {Key? key, required this.guildIdCallback, required this.guilds})
       : super(key: key);
@@ -36,9 +37,11 @@ class GuildsDropDownButton extends StatelessWidget {
                   );
                 },
               ).toList(),
-        value: guilds.isEmpty ? "No connected guild" : "",
+        value: guilds.isEmpty ? "No connected guild" : guilds.first.name,
         style: TextStyleHelper.get(context).defaultTextInputStyle,
-        onChanged: (value) {},
+        onChanged: (value) {
+          guildIdCallback(value);
+        },
         barrierColor: ThemeManager.getTheme(context)
             .dropdownButtonColors
             .defaultBarrierColor,
