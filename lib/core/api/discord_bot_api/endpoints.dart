@@ -14,5 +14,5 @@ class DiscordBotEndpoints {
   static const commandsHistory = "${Domains.base}Audit/Commands/{guildId}";
 
   static const changeUserPrestigeLevel =
-      "${Domains.base}Update/ChangeUserPrestigeLevel?userDiscordId={id}&newLevel={newLevel}";
+      "${Domains.update}ChangeUserPrestigeLevel?userDiscordId={id}&newLevel={newLevel}";
 }

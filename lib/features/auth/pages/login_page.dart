@@ -48,22 +48,30 @@ class LoginPage extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Login",
-                        style: TextStyleHelper.get(context)
-                            .defaultTextStyle
-                            .copyWith(fontSize: 12.sp)),
+                    Text(
+                      "Login",
+                      style: TextStyleHelper.get(context)
+                          .defaultTextStyle
+                          .copyWith(
+                            fontSize: 12.sp,
+                          ),
+                    ),
                     AuthPageInput(
                       inputType: InputTypes.email,
                       label: "Email",
                       onChanged: (email) => context.read<LoginBloc>().add(
-                            LoginEvent.emailChange(email: email),
+                            LoginEvent.emailChange(
+                              email: email,
+                            ),
                           ),
                     ),
                     AuthPageInput(
                       inputType: InputTypes.password,
                       label: "Password",
                       onChanged: (password) => context.read<LoginBloc>().add(
-                            LoginEvent.passwordChanged(password: password),
+                            LoginEvent.passwordChanged(
+                              password: password,
+                            ),
                           ),
                     ),
                     const VSpace(SpacingStatic.s15),
@@ -88,6 +96,7 @@ class LoginPage extends StatelessWidget {
                         );
                       },
                     ),
+                    const VSpace(SpacingStatic.s15),
                     const _LoginButton()
                   ],
                 ),
@@ -111,14 +120,18 @@ class _LoginButton extends StatelessWidget {
           child: Container(
             margin: EdgeInsets.all(3.sp),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(7),
-                border: Border.all(
-                    color: ThemeManager.getTheme(context).activeColor)),
+              borderRadius: BorderRadius.circular(7),
+              border: Border.all(
+                color: ThemeManager.getTheme(context).activeColor,
+              ),
+            ),
             child: InkWell(
               mouseCursor: SystemMouseCursors.click,
               borderRadius: BorderRadius.circular(25),
               onTap: () {
-                context.read<LoginBloc>().add(const LoginEvent.submit());
+                context.read<LoginBloc>().add(
+                      const LoginEvent.submit(),
+                    );
               },
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 2.sp),

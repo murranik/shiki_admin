@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 import 'app.dart';
+import 'core/di/di.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  //AppContainer.init();
+  await AppContainer.init();
   await SentryFlutter.init(
     (options) {
       options.dsn = kDebugMode

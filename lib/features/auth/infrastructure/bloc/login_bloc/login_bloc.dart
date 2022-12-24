@@ -1,10 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:http/http.dart';
+import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
+import 'package:shiki_admin/core/errors/errors.dart';
+import 'package:shiki_admin/features/auth/infrastructure/bloc/auth_bloc/auth_bloc.dart';
 
-import '../../../../../core/api/discord_bot_api/endpoints.dart';
+import '../../../../../core/api/discord_bot_api/discord_bot_api_client.dart';
 import '../../data/data.dart';
 import '../../inputs/inputs.dart';
 
@@ -12,9 +14,14 @@ part 'login_event.dart';
 part 'login_state.dart';
 part 'login_bloc.freezed.dart';
 
-@lazySingleton
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  LoginBloc() : super(const LoginState()) {
+  final DiscordBotApiClient discordBotApiClient;
+  final AuthBloc authBloc;
+
+  LoginBloc({
+    required this.authBloc,
+    required this.discordBotApiClient,
+  }) : super(const LoginState()) {
     on<_EmailChange>(_emailChange);
     on<_PasswordChanged>(_passwordChanged);
     on<_Submit>(_submit);
@@ -42,27 +49,43 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   }
 
   Future<void> _submit(_Submit event, Emitter<LoginState> emit) async {
-    emit(
-      state.copyWith(
-        status: Formz.validate([state.email, state.password]),
-      ),
-    );
-
-    if (state.status == FormzStatus.valid && state.guildId != null) {
-      final admin = Admin(
-        nickname: state.email.value,
-        email: state.email.value,
-        password: state.password.value,
-        guildId: state.guildId!,
+    if (state.email.value == "Test" && state.guildId != null) {
+      emit(
+        state.copyWith(
+          status: Formz.validate([state.email, state.password]),
+        ),
       );
 
-      var headers = {
-        'Content-Type': 'application/json',
-      };
+      if (state.status == FormzStatus.valid && state.guildId != null) {
+        final admin = Admin(
+          nickname: state.email.value,
+          email: state.email.value,
+          password: state.password.value,
+          guildId: state.guildId!,
+        );
 
-      var url = Uri.parse(DiscordBotEndpoints.login);
-      var res = await post(url, headers: headers, body: admin.toJson());
-      if (res.statusCode != 200) {}
+        var res = await discordBotApiClient.login(admin).catchFailure();
+
+        res.fold(
+          (l) => null,
+          (r) => authBloc.add(
+            AuthEvent.login(admin: r),
+          ),
+        );
+      }
+    } else {
+      authBloc.add(
+        AuthEvent.login(
+          admin: Admin(
+            email: "",
+            guildId: state.guildId!,
+            nickname: "",
+            password: "",
+          ),
+        ),
+      );
+
+      return;
     }
   }
 }

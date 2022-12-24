@@ -30,10 +30,12 @@ class GuildsDropDownButton extends StatelessWidget {
                 (dynamic value) {
                   return DropdownMenuItem<String>(
                     value: value,
-                    child: Text(value,
-                        style: TextStyleHelper.get(context)
-                            .defaultTextInputStyle
-                            .copyWith(fontSize: 5.sp)),
+                    child: Text(
+                      value,
+                      style: TextStyleHelper.get(context)
+                          .defaultTextInputStyle
+                          .copyWith(fontSize: 6.sp),
+                    ),
                   );
                 },
               ).toList(),
@@ -52,7 +54,7 @@ class GuildsDropDownButton extends StatelessWidget {
         iconDisabledColor: ThemeManager.getTheme(context)
             .dropdownButtonColors
             .defaultIconDisabledColor,
-        buttonHeight: 8.h,
+        buttonHeight: 7.h,
         buttonWidth: MediaQuery.of(context).size.width,
         buttonPadding: const EdgeInsets.only(left: 14, right: 14),
         buttonDecoration: BoxDecoration(
@@ -64,10 +66,8 @@ class GuildsDropDownButton extends StatelessWidget {
         ),
         dropdownDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(7),
-          color: ThemeManager.getTheme(context).activeColor,
         ),
         dropdownMaxHeight: 200,
-        dropdownWidth: 24.w,
         scrollbarRadius: const Radius.circular(40),
         scrollbarThickness: 6,
         scrollbarAlwaysShow: true,

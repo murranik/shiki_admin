@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'models/custom_theme_data.dart';
+
+import 'models/models.dart';
 
 class ThemeManager {
   static CustomThemeData getTheme(BuildContext context) {
@@ -17,17 +18,17 @@ class ThemeManager {
       defaultNavMenuBackgroundColor: const Color(0xff333333),
       defaultNavMenuTextColor: Colors.white,
       defaultTextColor: Colors.black,
-      dataTableCellColors: DataTableCellColors(
+      dataTableCellColors: const DataTableCellColors(
         id: -1,
         parentName: 'basic',
-        defaultBoxShadowColor: const Color.fromARGB(255, 218, 217, 217),
-        defaultBorderColor: const Color.fromARGB(255, 200, 200, 200),
+        defaultBoxShadowColor: Color.fromARGB(255, 218, 217, 217),
+        defaultBorderColor: Color.fromARGB(255, 200, 200, 200),
         defaultInputTextColor: Colors.black,
       ),
-      dropdownButtonColors: DropdownButtonColors(
+      dropdownButtonColors: const DropdownButtonColors(
         id: -1,
         parentName: 'basic',
-        defaultBarrierColor: const Color.fromARGB(130, 232, 226, 220),
+        defaultBarrierColor: Color.fromARGB(130, 232, 226, 220),
         defaultIconEnableColor: Colors.black,
         defaultIconDisabledColor: Colors.grey,
       ),

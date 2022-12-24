@@ -20,21 +20,18 @@ mixin _$AuthEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(Admin? admin) login,
     required TResult Function() logOut,
-    required TResult Function(String? guildId) changeGuild,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Admin? admin)? login,
     TResult? Function()? logOut,
-    TResult? Function(String? guildId)? changeGuild,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Admin? admin)? login,
     TResult Function()? logOut,
-    TResult Function(String? guildId)? changeGuild,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -42,21 +39,18 @@ mixin _$AuthEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Login value) login,
     required TResult Function(_LogOut value) logOut,
-    required TResult Function(_ChangeGuild value) changeGuild,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Login value)? login,
     TResult? Function(_LogOut value)? logOut,
-    TResult? Function(_ChangeGuild value)? changeGuild,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Login value)? login,
     TResult Function(_LogOut value)? logOut,
-    TResult Function(_ChangeGuild value)? changeGuild,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -157,7 +151,6 @@ class _$_Login implements _Login {
   TResult when<TResult extends Object?>({
     required TResult Function(Admin? admin) login,
     required TResult Function() logOut,
-    required TResult Function(String? guildId) changeGuild,
   }) {
     return login(admin);
   }
@@ -167,7 +160,6 @@ class _$_Login implements _Login {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Admin? admin)? login,
     TResult? Function()? logOut,
-    TResult? Function(String? guildId)? changeGuild,
   }) {
     return login?.call(admin);
   }
@@ -177,7 +169,6 @@ class _$_Login implements _Login {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Admin? admin)? login,
     TResult Function()? logOut,
-    TResult Function(String? guildId)? changeGuild,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -191,7 +182,6 @@ class _$_Login implements _Login {
   TResult map<TResult extends Object?>({
     required TResult Function(_Login value) login,
     required TResult Function(_LogOut value) logOut,
-    required TResult Function(_ChangeGuild value) changeGuild,
   }) {
     return login(this);
   }
@@ -201,7 +191,6 @@ class _$_Login implements _Login {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Login value)? login,
     TResult? Function(_LogOut value)? logOut,
-    TResult? Function(_ChangeGuild value)? changeGuild,
   }) {
     return login?.call(this);
   }
@@ -211,7 +200,6 @@ class _$_Login implements _Login {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Login value)? login,
     TResult Function(_LogOut value)? logOut,
-    TResult Function(_ChangeGuild value)? changeGuild,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -268,7 +256,6 @@ class _$_LogOut implements _LogOut {
   TResult when<TResult extends Object?>({
     required TResult Function(Admin? admin) login,
     required TResult Function() logOut,
-    required TResult Function(String? guildId) changeGuild,
   }) {
     return logOut();
   }
@@ -278,7 +265,6 @@ class _$_LogOut implements _LogOut {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Admin? admin)? login,
     TResult? Function()? logOut,
-    TResult? Function(String? guildId)? changeGuild,
   }) {
     return logOut?.call();
   }
@@ -288,7 +274,6 @@ class _$_LogOut implements _LogOut {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Admin? admin)? login,
     TResult Function()? logOut,
-    TResult Function(String? guildId)? changeGuild,
     required TResult orElse(),
   }) {
     if (logOut != null) {
@@ -302,7 +287,6 @@ class _$_LogOut implements _LogOut {
   TResult map<TResult extends Object?>({
     required TResult Function(_Login value) login,
     required TResult Function(_LogOut value) logOut,
-    required TResult Function(_ChangeGuild value) changeGuild,
   }) {
     return logOut(this);
   }
@@ -312,7 +296,6 @@ class _$_LogOut implements _LogOut {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Login value)? login,
     TResult? Function(_LogOut value)? logOut,
-    TResult? Function(_ChangeGuild value)? changeGuild,
   }) {
     return logOut?.call(this);
   }
@@ -322,7 +305,6 @@ class _$_LogOut implements _LogOut {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Login value)? login,
     TResult Function(_LogOut value)? logOut,
-    TResult Function(_ChangeGuild value)? changeGuild,
     required TResult orElse(),
   }) {
     if (logOut != null) {
@@ -334,145 +316,6 @@ class _$_LogOut implements _LogOut {
 
 abstract class _LogOut implements AuthEvent {
   const factory _LogOut() = _$_LogOut;
-}
-
-/// @nodoc
-abstract class _$$_ChangeGuildCopyWith<$Res> {
-  factory _$$_ChangeGuildCopyWith(
-          _$_ChangeGuild value, $Res Function(_$_ChangeGuild) then) =
-      __$$_ChangeGuildCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String? guildId});
-}
-
-/// @nodoc
-class __$$_ChangeGuildCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$_ChangeGuild>
-    implements _$$_ChangeGuildCopyWith<$Res> {
-  __$$_ChangeGuildCopyWithImpl(
-      _$_ChangeGuild _value, $Res Function(_$_ChangeGuild) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? guildId = freezed,
-  }) {
-    return _then(_$_ChangeGuild(
-      guildId: freezed == guildId
-          ? _value.guildId
-          : guildId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_ChangeGuild implements _ChangeGuild {
-  const _$_ChangeGuild({this.guildId});
-
-  @override
-  final String? guildId;
-
-  @override
-  String toString() {
-    return 'AuthEvent.changeGuild(guildId: $guildId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_ChangeGuild &&
-            (identical(other.guildId, guildId) || other.guildId == guildId));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, guildId);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_ChangeGuildCopyWith<_$_ChangeGuild> get copyWith =>
-      __$$_ChangeGuildCopyWithImpl<_$_ChangeGuild>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Admin? admin) login,
-    required TResult Function() logOut,
-    required TResult Function(String? guildId) changeGuild,
-  }) {
-    return changeGuild(guildId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Admin? admin)? login,
-    TResult? Function()? logOut,
-    TResult? Function(String? guildId)? changeGuild,
-  }) {
-    return changeGuild?.call(guildId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Admin? admin)? login,
-    TResult Function()? logOut,
-    TResult Function(String? guildId)? changeGuild,
-    required TResult orElse(),
-  }) {
-    if (changeGuild != null) {
-      return changeGuild(guildId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Login value) login,
-    required TResult Function(_LogOut value) logOut,
-    required TResult Function(_ChangeGuild value) changeGuild,
-  }) {
-    return changeGuild(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Login value)? login,
-    TResult? Function(_LogOut value)? logOut,
-    TResult? Function(_ChangeGuild value)? changeGuild,
-  }) {
-    return changeGuild?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Login value)? login,
-    TResult Function(_LogOut value)? logOut,
-    TResult Function(_ChangeGuild value)? changeGuild,
-    required TResult orElse(),
-  }) {
-    if (changeGuild != null) {
-      return changeGuild(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ChangeGuild implements AuthEvent {
-  const factory _ChangeGuild({final String? guildId}) = _$_ChangeGuild;
-
-  String? get guildId;
-  @JsonKey(ignore: true)
-  _$$_ChangeGuildCopyWith<_$_ChangeGuild> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

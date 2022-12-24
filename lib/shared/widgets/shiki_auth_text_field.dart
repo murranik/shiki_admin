@@ -34,15 +34,21 @@ class _AuthPageInputState extends State<AuthPageInput> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 3.sp),
-      child: Column(children: [
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Expanded(
-              child: TextFormField(
-                onChanged: (value) => widget.onChanged,
-                decoration: InputDecoration(
-                    labelText: widget.label,
+      child: Column(
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Expanded(
+                child: TextFormField(
+                  obscureText: widget.inputType == InputTypes.password
+                      ? _obscureText
+                      : false,
+                  style: TextStyleHelper.get(context).defaultTextInputStyle,
+                  onChanged: (value) => widget.onChanged,
+                  cursorColor: ThemeManager.getTheme(context).activeColor,
+                  decoration: InputDecoration(
+                    hintText: widget.label,
                     suffixIcon: Container(
                       padding: EdgeInsets.only(right: 1.w),
                       child: Row(
@@ -52,8 +58,16 @@ class _AuthPageInputState extends State<AuthPageInput> {
                             IconButton(
                               onPressed: _toggleObscure,
                               icon: _obscureText
-                                  ? const Icon(Icons.visibility_off)
-                                  : const Icon(Icons.visibility),
+                                  ? Icon(
+                                      Icons.visibility_off,
+                                      color: ThemeManager.getTheme(context)
+                                          .activeColor,
+                                    )
+                                  : Icon(
+                                      Icons.visibility,
+                                      color: ThemeManager.getTheme(context)
+                                          .activeColor,
+                                    ),
                             ),
                           valid
                               ? Icon(
@@ -69,31 +83,37 @@ class _AuthPageInputState extends State<AuthPageInput> {
                         ],
                       ),
                     ),
-                    labelStyle: TextStyleHelper.get(context)
-                        .defaultTextInputStyle
-                        .copyWith(fontSize: 6.sp),
                     enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(7),
-                        borderSide: BorderSide(
-                            color: ThemeManager.getTheme(context).activeColor)),
+                      borderRadius: BorderRadius.circular(7),
+                      borderSide: BorderSide(
+                        color: ThemeManager.getTheme(context).activeColor,
+                      ),
+                    ),
                     errorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(7),
-                        borderSide: BorderSide(
-                            color: ThemeManager.getTheme(context).activeColor)),
+                      borderRadius: BorderRadius.circular(7),
+                      borderSide: BorderSide(
+                        color: ThemeManager.getTheme(context).activeColor,
+                      ),
+                    ),
                     focusedErrorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(7),
-                        borderSide: BorderSide(
-                            color: ThemeManager.getTheme(context).activeColor)),
+                      borderRadius: BorderRadius.circular(7),
+                      borderSide: BorderSide(
+                        color: ThemeManager.getTheme(context).activeColor,
+                      ),
+                    ),
                     focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(7),
-                        borderSide: BorderSide(
-                            color:
-                                ThemeManager.getTheme(context).activeColor))),
+                      borderRadius: BorderRadius.circular(7),
+                      borderSide: BorderSide(
+                        color: ThemeManager.getTheme(context).activeColor,
+                      ),
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ],
-        ),
-      ]),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
