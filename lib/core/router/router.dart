@@ -1,9 +1,14 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:auto_route/empty_router_widgets.dart';
-import 'package:shiki_admin/features/auth/pages/login_screen.dart';
+import 'package:shiki_admin/core/widgets/home/home_tab.dart';
+import 'package:shiki_admin/features/audit/audit_page.dart';
+import 'package:shiki_admin/features/auth/pages/login_page_container.dart';
+import 'package:shiki_admin/features/roles/roles_page.dart';
+import 'package:shiki_admin/features/settings/settings_page.dart';
+import 'package:shiki_admin/features/statistic/statistic_page.dart';
 
 import '../../features/users/users_page.dart';
 import '../../main_route_page.dart';
+import '../widgets/home/home_page_container.dart';
 
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Screen,Route',
@@ -17,19 +22,37 @@ import '../../main_route_page.dart';
         MaterialRoute(
           name: 'AuthenticatedRoute',
           path: '',
-          page: EmptyRouterScreen,
+          page: HomePageContainer,
           children: [
             AutoRoute(
-              name: 'HomePageRoute',
-              path: 'home',
-              page: EmptyRouterScreen,
-              children: [
-                AutoRoute(
-                  initial: true,
-                  name: 'UsersPageRoute',
-                  page: UsersPage,
-                ),
-              ],
+              page: Home,
+              path: "home",
+              name: 'HomeRoute',
+            ),
+            AutoRoute(
+              path: "users",
+              page: UsersPage,
+              name: 'UsersRoute',
+            ),
+            AutoRoute(
+              path: "roles",
+              page: RolesPage,
+              name: 'RolesRoute',
+            ),
+            AutoRoute(
+              path: "statistic",
+              page: StatisticPage,
+              name: 'StatisticRoute',
+            ),
+            AutoRoute(
+              path: "audit",
+              page: AuditPage,
+              name: 'AuditRoute',
+            ),
+            AutoRoute(
+              path: "settings",
+              page: SettingsPage,
+              name: 'SettingsRoute',
             ),
           ],
         ),

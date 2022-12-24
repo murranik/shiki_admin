@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shiki_admin/features/auth/infrastructure/data/data.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../shared/theme/theme.dart';
+import '../../theme/theme.dart';
 
 class GuildsDropDownButton extends StatelessWidget {
   final Function guildIdCallback;
@@ -20,10 +20,14 @@ class GuildsDropDownButton extends StatelessWidget {
             ? [
                 DropdownMenuItem<String>(
                   value: "No connected guild",
-                  child: Text("No connected guild",
-                      style: TextStyleHelper.get(context)
-                          .defaultTextInputStyle
-                          .copyWith(fontSize: 6.sp)),
+                  child: Text(
+                    "No connected guild",
+                    style: TextStyleHelper.get(context)
+                        .defaultTextInputStyle
+                        .copyWith(
+                          fontSize: 4.5.sp,
+                        ),
+                  ),
                 )
               ]
             : guilds.map((e) => e.name).toList().map<DropdownMenuItem<String>>(
@@ -34,7 +38,9 @@ class GuildsDropDownButton extends StatelessWidget {
                       value,
                       style: TextStyleHelper.get(context)
                           .defaultTextInputStyle
-                          .copyWith(fontSize: 6.sp),
+                          .copyWith(
+                            fontSize: 4.5.sp,
+                          ),
                     ),
                   );
                 },
@@ -54,7 +60,7 @@ class GuildsDropDownButton extends StatelessWidget {
         iconDisabledColor: ThemeManager.getTheme(context)
             .dropdownButtonColors
             .defaultIconDisabledColor,
-        buttonHeight: 7.h,
+        buttonHeight: 8.h,
         buttonWidth: MediaQuery.of(context).size.width,
         buttonPadding: const EdgeInsets.only(left: 14, right: 14),
         buttonDecoration: BoxDecoration(

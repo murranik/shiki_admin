@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shiki_admin/shared/theme/theme_manager.dart';
 import 'package:sizer/sizer.dart';
+
+import 'theme_manager.dart';
 
 class TextStyleHelper {
   static TextStyleHelperData get(BuildContext context) {

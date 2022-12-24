@@ -11,78 +11,125 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i5;
-import 'package:auto_route/empty_router_widgets.dart' as _i2;
-import 'package:flutter/material.dart' as _i6;
+import 'package:auto_route/auto_route.dart' as _i10;
+import 'package:flutter/material.dart' as _i11;
 
-import '../../features/auth/pages/login_screen.dart' as _i3;
-import '../../features/users/users_page.dart' as _i4;
+import '../../features/audit/audit_page.dart' as _i8;
+import '../../features/auth/pages/login_page_container.dart' as _i3;
+import '../../features/roles/roles_page.dart' as _i6;
+import '../../features/settings/settings_page.dart' as _i9;
+import '../../features/statistic/statistic_page.dart' as _i7;
+import '../../features/users/users_page.dart' as _i5;
 import '../../main_route_page.dart' as _i1;
+import '../widgets/home/home_page_container.dart' as _i2;
+import '../widgets/home/home_tab.dart' as _i4;
 
-class AppRouter extends _i5.RootStackRouter {
-  AppRouter([_i6.GlobalKey<_i6.NavigatorState>? navigatorKey])
+class AppRouter extends _i10.RootStackRouter {
+  AppRouter([_i11.GlobalKey<_i11.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i5.PageFactory> pagesMap = {
+  final Map<String, _i10.PageFactory> pagesMap = {
     MainRoutePage.name: (routeData) {
-      return _i5.AdaptivePage<dynamic>(
+      return _i10.AdaptivePage<dynamic>(
         routeData: routeData,
         child: const _i1.MainRoutePage(),
       );
     },
     AuthenticatedRoute.name: (routeData) {
-      return _i5.MaterialPageX<dynamic>(
+      return _i10.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i2.EmptyRouterScreen(),
+        child: const _i2.HomePageContainer(),
       );
     },
     UnAuthenticatedRoute.name: (routeData) {
-      return _i5.MaterialPageX<dynamic>(
+      return _i10.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i3.LoginPageContainer(),
       );
     },
-    HomePageRoute.name: (routeData) {
-      return _i5.AdaptivePage<dynamic>(
+    HomeRoute.name: (routeData) {
+      return _i10.AdaptivePage<dynamic>(
         routeData: routeData,
-        child: const _i2.EmptyRouterScreen(),
+        child: const _i4.Home(),
       );
     },
-    UsersPageRoute.name: (routeData) {
-      return _i5.AdaptivePage<dynamic>(
+    UsersRoute.name: (routeData) {
+      return _i10.AdaptivePage<dynamic>(
         routeData: routeData,
-        child: const _i4.UsersPage(),
+        child: const _i5.UsersPage(),
+      );
+    },
+    RolesRoute.name: (routeData) {
+      return _i10.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: const _i6.RolesPage(),
+      );
+    },
+    StatisticRoute.name: (routeData) {
+      return _i10.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: const _i7.StatisticPage(),
+      );
+    },
+    AuditRoute.name: (routeData) {
+      return _i10.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: const _i8.AuditPage(),
+      );
+    },
+    SettingsRoute.name: (routeData) {
+      return _i10.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: const _i9.SettingsPage(),
       );
     },
   };
 
   @override
-  List<_i5.RouteConfig> get routes => [
-        _i5.RouteConfig(
+  List<_i10.RouteConfig> get routes => [
+        _i10.RouteConfig(
           MainRoutePage.name,
           path: '/',
           children: [
-            _i5.RouteConfig(
+            _i10.RouteConfig(
               AuthenticatedRoute.name,
               path: '',
               parent: MainRoutePage.name,
               children: [
-                _i5.RouteConfig(
-                  HomePageRoute.name,
+                _i10.RouteConfig(
+                  HomeRoute.name,
                   path: 'home',
                   parent: AuthenticatedRoute.name,
-                  children: [
-                    _i5.RouteConfig(
-                      UsersPageRoute.name,
-                      path: '',
-                      parent: HomePageRoute.name,
-                    )
-                  ],
-                )
+                ),
+                _i10.RouteConfig(
+                  UsersRoute.name,
+                  path: 'users',
+                  parent: AuthenticatedRoute.name,
+                ),
+                _i10.RouteConfig(
+                  RolesRoute.name,
+                  path: 'roles',
+                  parent: AuthenticatedRoute.name,
+                ),
+                _i10.RouteConfig(
+                  StatisticRoute.name,
+                  path: 'statistic',
+                  parent: AuthenticatedRoute.name,
+                ),
+                _i10.RouteConfig(
+                  AuditRoute.name,
+                  path: 'audit',
+                  parent: AuthenticatedRoute.name,
+                ),
+                _i10.RouteConfig(
+                  SettingsRoute.name,
+                  path: 'settings',
+                  parent: AuthenticatedRoute.name,
+                ),
               ],
             ),
-            _i5.RouteConfig(
+            _i10.RouteConfig(
               UnAuthenticatedRoute.name,
               path: 'login',
               parent: MainRoutePage.name,
@@ -94,8 +141,8 @@ class AppRouter extends _i5.RootStackRouter {
 
 /// generated route for
 /// [_i1.MainRoutePage]
-class MainRoutePage extends _i5.PageRouteInfo<void> {
-  const MainRoutePage({List<_i5.PageRouteInfo>? children})
+class MainRoutePage extends _i10.PageRouteInfo<void> {
+  const MainRoutePage({List<_i10.PageRouteInfo>? children})
       : super(
           MainRoutePage.name,
           path: '/',
@@ -106,9 +153,9 @@ class MainRoutePage extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.EmptyRouterScreen]
-class AuthenticatedRoute extends _i5.PageRouteInfo<void> {
-  const AuthenticatedRoute({List<_i5.PageRouteInfo>? children})
+/// [_i2.HomePageContainer]
+class AuthenticatedRoute extends _i10.PageRouteInfo<void> {
+  const AuthenticatedRoute({List<_i10.PageRouteInfo>? children})
       : super(
           AuthenticatedRoute.name,
           path: '',
@@ -120,7 +167,7 @@ class AuthenticatedRoute extends _i5.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.LoginPageContainer]
-class UnAuthenticatedRoute extends _i5.PageRouteInfo<void> {
+class UnAuthenticatedRoute extends _i10.PageRouteInfo<void> {
   const UnAuthenticatedRoute()
       : super(
           UnAuthenticatedRoute.name,
@@ -131,26 +178,73 @@ class UnAuthenticatedRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.EmptyRouterScreen]
-class HomePageRoute extends _i5.PageRouteInfo<void> {
-  const HomePageRoute({List<_i5.PageRouteInfo>? children})
+/// [_i4.Home]
+class HomeRoute extends _i10.PageRouteInfo<void> {
+  const HomeRoute()
       : super(
-          HomePageRoute.name,
+          HomeRoute.name,
           path: 'home',
-          initialChildren: children,
         );
 
-  static const String name = 'HomePageRoute';
+  static const String name = 'HomeRoute';
 }
 
 /// generated route for
-/// [_i4.UsersPage]
-class UsersPageRoute extends _i5.PageRouteInfo<void> {
-  const UsersPageRoute()
+/// [_i5.UsersPage]
+class UsersRoute extends _i10.PageRouteInfo<void> {
+  const UsersRoute()
       : super(
-          UsersPageRoute.name,
-          path: '',
+          UsersRoute.name,
+          path: 'users',
         );
 
-  static const String name = 'UsersPageRoute';
+  static const String name = 'UsersRoute';
+}
+
+/// generated route for
+/// [_i6.RolesPage]
+class RolesRoute extends _i10.PageRouteInfo<void> {
+  const RolesRoute()
+      : super(
+          RolesRoute.name,
+          path: 'roles',
+        );
+
+  static const String name = 'RolesRoute';
+}
+
+/// generated route for
+/// [_i7.StatisticPage]
+class StatisticRoute extends _i10.PageRouteInfo<void> {
+  const StatisticRoute()
+      : super(
+          StatisticRoute.name,
+          path: 'statistic',
+        );
+
+  static const String name = 'StatisticRoute';
+}
+
+/// generated route for
+/// [_i8.AuditPage]
+class AuditRoute extends _i10.PageRouteInfo<void> {
+  const AuditRoute()
+      : super(
+          AuditRoute.name,
+          path: 'audit',
+        );
+
+  static const String name = 'AuditRoute';
+}
+
+/// generated route for
+/// [_i9.SettingsPage]
+class SettingsRoute extends _i10.PageRouteInfo<void> {
+  const SettingsRoute()
+      : super(
+          SettingsRoute.name,
+          path: 'settings',
+        );
+
+  static const String name = 'SettingsRoute';
 }

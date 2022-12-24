@@ -78,7 +78,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         AuthEvent.login(
           admin: Admin(
             email: "",
-            guildId: state.guildId!,
+            guildId: state.guildId ?? "",
             nickname: "",
             password: "",
           ),

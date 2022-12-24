@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../json_converters/json_converters.dart';
+import '../../../../shared/json_converters/json_converters.dart';
 import '../models.dart';
 
 part 'custom_theme_data.freezed.dart';

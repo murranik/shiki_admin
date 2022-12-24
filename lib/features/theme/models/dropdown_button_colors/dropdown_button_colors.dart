@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../json_converters/json_converters.dart';
+import '../../../../shared/json_converters/color_json_converter.dart';
 
 part 'dropdown_button_colors.freezed.dart';
 part 'dropdown_button_colors.g.dart';

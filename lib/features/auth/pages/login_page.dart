@@ -7,8 +7,8 @@ import 'package:shiki_admin/shared/widgets/spaces.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../shared/enums/enums.dart';
-import '../../../shared/theme/theme.dart';
 import '../../../shared/widgets/shiki_auth_text_field.dart';
+import '../../theme/theme.dart';
 import '../widgets/guilds_drop_down_button.dart';
 
 class LoginPage extends StatelessWidget {

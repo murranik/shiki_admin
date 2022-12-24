@@ -27,7 +27,8 @@ class ShikiApp extends StatelessWidget implements ErrorHandler {
         providers: [
           BlocProvider(
             lazy: false,
-            create: (context) => GetIt.I<AuthBloc>(),
+            create: (context) =>
+                GetIt.I<AuthBloc>()..add(const AuthEvent.checkIsLogined()),
           ),
         ],
         child: LayoutBuilder(
@@ -39,6 +40,18 @@ class ShikiApp extends StatelessWidget implements ErrorHandler {
                   title: '',
                   debugShowCheckedModeBanner: false,
                   routeInformationParser: _appRouter.defaultRouteParser(),
+                  theme: ThemeData(
+                    pageTransitionsTheme: const PageTransitionsTheme(
+                      builders: {
+                        TargetPlatform.android: _NoTransitionsBuilder(),
+                        TargetPlatform.iOS: _NoTransitionsBuilder(),
+                        TargetPlatform.linux: _NoTransitionsBuilder(),
+                        TargetPlatform.macOS: _NoTransitionsBuilder(),
+                        TargetPlatform.windows: _NoTransitionsBuilder(),
+                        TargetPlatform.fuchsia: _NoTransitionsBuilder(),
+                      },
+                    ),
+                  ),
                   routerDelegate: _appRouter.delegate(
                     navigatorObservers: () => [
                       SentryNavigatorObserver(),

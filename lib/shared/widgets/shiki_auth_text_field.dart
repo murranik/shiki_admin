@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../features/theme/theme.dart';
 import '../enums/enums.dart';
-import '../theme/theme.dart';
 
 class AuthPageInput extends StatefulWidget {
   final Function onChanged;
@@ -44,7 +44,11 @@ class _AuthPageInputState extends State<AuthPageInput> {
                   obscureText: widget.inputType == InputTypes.password
                       ? _obscureText
                       : false,
-                  style: TextStyleHelper.get(context).defaultTextInputStyle,
+                  style: TextStyleHelper.get(context)
+                      .defaultTextInputStyle
+                      .copyWith(
+                        fontSize: 4.4.sp,
+                      ),
                   onChanged: (value) => widget.onChanged,
                   cursorColor: ThemeManager.getTheme(context).activeColor,
                   decoration: InputDecoration(
