@@ -9,7 +9,7 @@ import 'package:sizer/sizer.dart';
 import '../../../shared/enums/enums.dart';
 import '../../../shared/widgets/shiki_auth_text_field.dart';
 import '../../theme/theme.dart';
-import '../widgets/guilds_drop_down_button.dart';
+import '../../guilds/wigets/guilds_drop_down_button.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({

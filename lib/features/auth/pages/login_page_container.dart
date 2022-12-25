@@ -22,7 +22,9 @@ class LoginPageContainer extends StatelessWidget {
           ),
         ),
         BlocProvider(
-          create: (_) => GuildsBloc()..add(const GuildsEvent.fetchGuilds()),
+          create: (_) => GuildsBloc(
+            discordBotApiClient: GetIt.I<DiscordBotApiClient>(),
+          )..add(const GuildsEvent.fetchGuilds()),
         )
       ],
       child: const LoginPage(),

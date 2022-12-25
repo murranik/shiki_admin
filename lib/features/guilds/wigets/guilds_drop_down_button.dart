@@ -1,9 +1,9 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-import 'package:shiki_admin/features/auth/infrastructure/data/data.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../theme/theme.dart';
+import '../infrastructure/models/guild/guild.dart';
 
 class GuildsDropDownButton extends StatelessWidget {
   final Function guildIdCallback;

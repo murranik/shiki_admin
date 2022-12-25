@@ -5,8 +5,9 @@ import 'package:shiki_admin/features/auth/pages/login_page_container.dart';
 import 'package:shiki_admin/features/roles/roles_page.dart';
 import 'package:shiki_admin/features/settings/settings_page.dart';
 import 'package:shiki_admin/features/statistic/statistic_page.dart';
+import 'package:shiki_admin/features/users/pages/users_page_container.dart';
 
-import '../../features/users/users_page.dart';
+import '../../features/users/pages/users_page.dart';
 import '../../main_route_page.dart';
 import '../widgets/home/home_page_container.dart';
 
@@ -31,7 +32,7 @@ import '../widgets/home/home_page_container.dart';
             ),
             AutoRoute(
               path: "users",
-              page: UsersPage,
+              page: UsersPageContainer,
               name: 'UsersRoute',
             ),
             AutoRoute(
