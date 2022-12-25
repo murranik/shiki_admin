@@ -49,43 +49,43 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   }
 
   Future<void> _submit(_Submit event, Emitter<LoginState> emit) async {
-    if (state.email.value == "Test" && state.guildId != null) {
-      emit(
-        state.copyWith(
-          status: Formz.validate([state.email, state.password]),
-        ),
-      );
-
-      if (state.status == FormzStatus.valid && state.guildId != null) {
-        final admin = Admin(
-          nickname: state.email.value,
-          email: state.email.value,
-          password: state.password.value,
-          guildId: state.guildId!,
-        );
-
-        var res = await discordBotApiClient.login(admin).catchFailure();
-
-        res.fold(
-          (l) => null,
-          (r) => authBloc.add(
-            AuthEvent.login(admin: r),
+    if (state.email.value != "Test") {
+      if (state.guildId != null) {
+        emit(
+          state.copyWith(
+            status: Formz.validate([state.email, state.password]),
           ),
         );
+
+        if (state.status == FormzStatus.valid && state.guildId != null) {
+          final admin = Admin(
+            nickname: state.email.value,
+            email: state.email.value,
+            password: state.password.value,
+            guildId: state.guildId!,
+          );
+
+          var res = await discordBotApiClient.login(admin).catchFailure();
+
+          res.fold(
+            (l) => null,
+            (r) => authBloc.add(
+              AuthEvent.login(admin: r),
+            ),
+          );
+        }
       }
     } else {
       authBloc.add(
         AuthEvent.login(
           admin: Admin(
-            email: "",
+            email: "test@test.test",
             guildId: state.guildId ?? "",
-            nickname: "",
-            password: "",
+            nickname: "test",
+            password: "test",
           ),
         ),
       );
-
-      return;
     }
   }
 }
