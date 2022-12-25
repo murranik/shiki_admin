@@ -21,13 +21,6 @@ version: 1.0.0+1
 
 environment:
   sdk: '>=2.18.6 <3.0.0'
-
-analyzer:
-  strong-mode: true
-  language:
-    enableSuperMixins: true
-  errors:
-    mixin_inherits_from_not_object: ignore
     
 dependencies:
   flutter:

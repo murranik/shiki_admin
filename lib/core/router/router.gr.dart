@@ -19,7 +19,7 @@ import '../../features/auth/pages/login_page_container.dart' as _i3;
 import '../../features/roles/roles_page.dart' as _i6;
 import '../../features/settings/settings_page.dart' as _i9;
 import '../../features/statistic/statistic_page.dart' as _i7;
-import '../../features/users/pages/users_page.dart' as _i5;
+import '../../features/users/pages/users_page_container.dart' as _i5;
 import '../../main_route_page.dart' as _i1;
 import '../widgets/home/home_page_container.dart' as _i2;
 import '../widgets/home/home_tab.dart' as _i4;
@@ -57,7 +57,7 @@ class AppRouter extends _i10.RootStackRouter {
     UsersRoute.name: (routeData) {
       return _i10.AdaptivePage<dynamic>(
         routeData: routeData,
-        child: const _i5.UsersPage(),
+        child: const _i5.UsersPageContainer(),
       );
     },
     RolesRoute.name: (routeData) {
@@ -190,7 +190,7 @@ class HomeRoute extends _i10.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i5.UsersPage]
+/// [_i5.UsersPageContainer]
 class UsersRoute extends _i10.PageRouteInfo<void> {
   const UsersRoute()
       : super(
