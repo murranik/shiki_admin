@@ -49,7 +49,7 @@ class _AuthPageInputState extends State<AuthPageInput> {
                       .copyWith(
                         fontSize: 4.4.sp,
                       ),
-                  onChanged: (value) => widget.onChanged,
+                  onChanged: (value) => widget.onChanged(value),
                   cursorColor: ThemeManager.getTheme(context).activeColor,
                   decoration: InputDecoration(
                     hintText: widget.label,

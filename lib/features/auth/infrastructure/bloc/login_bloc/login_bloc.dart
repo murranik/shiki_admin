@@ -50,6 +50,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   Future<void> _submit(_Submit event, Emitter<LoginState> emit) async {
     if (state.email.value != "Test") {
+      var l = state.email.value;
       if (state.guildId != null) {
         emit(
           state.copyWith(

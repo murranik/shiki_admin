@@ -33,8 +33,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     var res = _authStorage.getAdmin();
     if (res == null) {
       emit(const AuthUnauthenticated());
+    } else {
+      emit(const AuthAuthenticated());
     }
-
-    emit(const AuthAuthenticated());
   }
 }

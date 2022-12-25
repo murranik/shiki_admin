@@ -57,14 +57,15 @@ class LoginPage extends StatelessWidget {
                           ),
                     ),
                     AuthPageInput(
-                      inputType: InputTypes.email,
-                      label: "Email",
-                      onChanged: (email) => context.read<LoginBloc>().add(
-                            LoginEvent.emailChange(
-                              email: email,
-                            ),
-                          ),
-                    ),
+                        inputType: InputTypes.email,
+                        label: "Email",
+                        onChanged: (email) {
+                          context.read<LoginBloc>().add(
+                                LoginEvent.emailChange(
+                                  email: email,
+                                ),
+                              );
+                        }),
                     AuthPageInput(
                       inputType: InputTypes.password,
                       label: "Password",

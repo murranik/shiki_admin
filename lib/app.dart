@@ -26,7 +26,6 @@ class ShikiApp extends StatelessWidget implements ErrorHandler {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
-            lazy: false,
             create: (context) =>
                 GetIt.I<AuthBloc>()..add(const AuthEvent.checkIsLogined()),
           ),
