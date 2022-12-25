@@ -26,6 +26,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   void _logOut(_LogOut event, Emitter<AuthState> emit) {
+    _authStorage.clear();
+
     emit(const AuthUnauthenticated());
   }
 
