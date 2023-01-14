@@ -15,10 +15,10 @@ class UsersBloc extends Bloc<UsersEvent, UsersState> {
   UsersBloc({
     required this.discordBotApiClient,
   }) : super(const UsersState.initial()) {
-    on<_FetchUsers>(_fetchGuilds);
+    on<_FetchUsers>(_fetchUsers);
   }
 
-  Future<void> _fetchGuilds(_FetchUsers event, Emitter<UsersState> emit) async {
+  Future<void> _fetchUsers(_FetchUsers event, Emitter<UsersState> emit) async {
     emit(const _UsersStateLoading());
 
     var res = await discordBotApiClient.fetchUsers().catchFailure();

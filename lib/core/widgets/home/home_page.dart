@@ -107,6 +107,7 @@ class _HomePagePageState extends State<HomePage> {
                     statistic: (statistic) => [const StatisticRoute()],
                     audit: (audit) => [const AuditRoute()],
                     settings: (settings) => [const SettingsRoute()],
+                    userRoles: (userRoles) => [const UserRolesRoute()],
                   ),
                 ),
               );

@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-import 'package:shiki_admin/features/users/pages/users_page.dart';
+import 'package:shiki_admin/features/user_roles/infrastructure/blocs/user_roles_bloc.dart';
+import 'package:shiki_admin/features/user_roles/pages/user_roles_page.dart';
 
 import '../../../core/api/discord_bot_api/discord_bot_api_client.dart';
-import '../infrastructure/blocs/users_bloc.dart';
 
-class UsersPageContainer extends StatelessWidget {
-  const UsersPageContainer({Key? key}) : super(key: key);
+class UserRolesPageContainer extends StatelessWidget {
+  const UserRolesPageContainer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (_) => UsersBloc(
+          create: (_) => UserRolesBloc(
             discordBotApiClient: GetIt.I<DiscordBotApiClient>(),
-          )..add(const UsersEvent.fetchUsers()),
+          )..add(const UserRolesEvent.fetchUserRoles()),
         ),
       ],
-      child: const UsersPage(),
+      child: const UserRolesPage(),
     );
   }
 }

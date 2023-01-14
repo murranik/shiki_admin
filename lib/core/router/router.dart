@@ -2,9 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:shiki_admin/core/widgets/home/home_tab.dart';
 import 'package:shiki_admin/features/audit/audit_page.dart';
 import 'package:shiki_admin/features/auth/pages/login_page_container.dart';
-import 'package:shiki_admin/features/roles/roles_page.dart';
+import 'package:shiki_admin/features/roles/pages/roles_page.dart';
 import 'package:shiki_admin/features/settings/settings_page.dart';
 import 'package:shiki_admin/features/statistic/statistic_page.dart';
+import 'package:shiki_admin/features/user_roles/pages/user_roles_page_container.dart';
 import 'package:shiki_admin/features/users/pages/users_page_container.dart';
 
 import '../../features/users/pages/users_page.dart';
@@ -39,6 +40,11 @@ import '../widgets/home/home_page_container.dart';
               path: "roles",
               page: RolesPage,
               name: 'RolesRoute',
+            ),
+            AutoRoute(
+              path: "user-roles",
+              page: UserRolesPageContainer,
+              name: 'UserRolesRoute',
             ),
             AutoRoute(
               path: "statistic",

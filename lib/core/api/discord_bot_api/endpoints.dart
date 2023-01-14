@@ -5,14 +5,18 @@ class DiscordBotEndpoints {
 
   static const login = "${Domains.base}Administration";
 
-  static const guilds = "${Domains.get}SocketGuild";
+  static const guilds = "${Endpoint.get}SocketGuild";
 
-  static const roles = "${Domains.get}DiscordRole";
+  static const get = Endpoint.get;
 
-  static const users = "${Domains.get}DiscordUser";
+  static const roles = "${Endpoint.get}DiscordRole";
+
+  static const users = "${Endpoint.get}DiscordUser";
+
+  static const userRoles = "${Endpoint.get}UserRole";
 
   static const commandsHistory = "${Domains.base}Audit/Commands/{guildId}";
 
   static const changeUserPrestigeLevel =
-      "${Domains.update}ChangeUserPrestigeLevel?userDiscordId={id}&newLevel={newLevel}";
+      "${Endpoint.update}ChangeUserPrestigeLevel?userDiscordId={id}&newLevel={newLevel}";
 }

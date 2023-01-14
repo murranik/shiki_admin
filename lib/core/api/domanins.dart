@@ -1,5 +1,8 @@
 class Domains {
   static const base = "https://localhost:5001/api/";
-  static const get = "${base}Get/";
-  static const update = "${base}Update/";
+}
+
+class Endpoint extends Domains {
+  static const get = "${Domains.base}Get/";
+  static const update = "${Domains.base}Update/";
 }

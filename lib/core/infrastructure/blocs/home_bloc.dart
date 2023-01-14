@@ -26,6 +26,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       case HomeTabs.audit:
         state = const Audit();
         break;
+      case HomeTabs.userRoles:
+        state = const UserRoles();
+        break;
       case HomeTabs.roles:
         state = const Roles();
         break;
