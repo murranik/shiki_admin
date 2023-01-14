@@ -8,6 +8,7 @@ import 'package:shiki_admin/features/statistic/statistic_page.dart';
 import 'package:shiki_admin/features/user_roles/pages/user_roles_page_container.dart';
 import 'package:shiki_admin/features/users/pages/users_page_container.dart';
 
+import '../../features/roles/pages/roles_page_container.dart';
 import '../../features/users/pages/users_page.dart';
 import '../../main_route_page.dart';
 import '../widgets/home/home_page_container.dart';
@@ -38,7 +39,7 @@ import '../widgets/home/home_page_container.dart';
             ),
             AutoRoute(
               path: "roles",
-              page: RolesPage,
+              page: RolesPageContainer,
               name: 'RolesRoute',
             ),
             AutoRoute(

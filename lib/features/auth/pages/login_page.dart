@@ -75,7 +75,7 @@ class LoginPage extends StatelessWidget {
                             ),
                           ),
                     ),
-                    const VSpace(SpacingStatic.s15),
+                    const VSpace(SpacingStatic.px15),
                     BlocBuilder<GuildsBloc, GuildsState>(
                       builder: (BuildContext context, state) {
                         return state.maybeMap(
@@ -97,7 +97,7 @@ class LoginPage extends StatelessWidget {
                         );
                       },
                     ),
-                    const VSpace(SpacingStatic.s15),
+                    const VSpace(SpacingStatic.px15),
                     const _LoginButton()
                   ],
                 ),

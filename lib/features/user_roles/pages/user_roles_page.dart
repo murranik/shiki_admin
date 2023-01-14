@@ -30,28 +30,30 @@ class _UserRolesPageState extends State<UserRolesPage> {
                   DataTableCell(name: "GuildId", flex: 22),
                 ],
               ),
-              SingleChildScrollView(
-                child: Column(
-                  children: loaded.userRoles
-                      .map(
-                        (userRole) => Row(
-                          children: [
-                            DataTableCell(
-                              name: userRole.id.toString(),
-                              flex: 6,
-                            ),
-                            DataTableCell(
-                              name: userRole.roleId.toString(),
-                              flex: 22,
-                            ),
-                            DataTableCell(
-                              name: userRole.userId.toString(),
-                              flex: 22,
-                            ),
-                          ],
-                        ),
-                      )
-                      .toList(),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: loaded.userRoles
+                        .map(
+                          (userRole) => Row(
+                            children: [
+                              DataTableCell(
+                                name: userRole.id.toString(),
+                                flex: 6,
+                              ),
+                              DataTableCell(
+                                name: userRole.roleId.toString(),
+                                flex: 22,
+                              ),
+                              DataTableCell(
+                                name: userRole.userId.toString(),
+                                flex: 22,
+                              ),
+                            ],
+                          ),
+                        )
+                        .toList(),
+                  ),
                 ),
               ),
             ],

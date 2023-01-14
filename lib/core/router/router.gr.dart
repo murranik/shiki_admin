@@ -16,7 +16,7 @@ import 'package:flutter/material.dart' as _i12;
 
 import '../../features/audit/audit_page.dart' as _i9;
 import '../../features/auth/pages/login_page_container.dart' as _i3;
-import '../../features/roles/pages/roles_page.dart' as _i6;
+import '../../features/roles/pages/roles_page_container.dart' as _i6;
 import '../../features/settings/settings_page.dart' as _i10;
 import '../../features/statistic/statistic_page.dart' as _i8;
 import '../../features/user_roles/pages/user_roles_page_container.dart' as _i7;
@@ -64,7 +64,7 @@ class AppRouter extends _i11.RootStackRouter {
     RolesRoute.name: (routeData) {
       return _i11.AdaptivePage<dynamic>(
         routeData: routeData,
-        child: const _i6.RolesPage(),
+        child: const _i6.RolesPageContainer(),
       );
     },
     UserRolesRoute.name: (routeData) {
@@ -214,7 +214,7 @@ class UsersRoute extends _i11.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i6.RolesPage]
+/// [_i6.RolesPageContainer]
 class RolesRoute extends _i11.PageRouteInfo<void> {
   const RolesRoute()
       : super(

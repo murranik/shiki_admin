@@ -20,6 +20,7 @@ Role _$RoleFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Role {
+  @ToStringJsonConverter()
   String get discordId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
@@ -33,7 +34,7 @@ abstract class $RoleCopyWith<$Res> {
   factory $RoleCopyWith(Role value, $Res Function(Role) then) =
       _$RoleCopyWithImpl<$Res, Role>;
   @useResult
-  $Res call({String discordId, String name});
+  $Res call({@ToStringJsonConverter() String discordId, String name});
 }
 
 /// @nodoc
@@ -71,7 +72,7 @@ abstract class _$$_RoleCopyWith<$Res> implements $RoleCopyWith<$Res> {
       __$$_RoleCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String discordId, String name});
+  $Res call({@ToStringJsonConverter() String discordId, String name});
 }
 
 /// @nodoc
@@ -102,11 +103,13 @@ class __$$_RoleCopyWithImpl<$Res> extends _$RoleCopyWithImpl<$Res, _$_Role>
 /// @nodoc
 @JsonSerializable()
 class _$_Role implements _Role {
-  const _$_Role({required this.discordId, required this.name});
+  const _$_Role(
+      {@ToStringJsonConverter() required this.discordId, required this.name});
 
   factory _$_Role.fromJson(Map<String, dynamic> json) => _$$_RoleFromJson(json);
 
   @override
+  @ToStringJsonConverter()
   final String discordId;
   @override
   final String name;
@@ -146,11 +149,13 @@ class _$_Role implements _Role {
 
 abstract class _Role implements Role {
   const factory _Role(
-      {required final String discordId, required final String name}) = _$_Role;
+      {@ToStringJsonConverter() required final String discordId,
+      required final String name}) = _$_Role;
 
   factory _Role.fromJson(Map<String, dynamic> json) = _$_Role.fromJson;
 
   @override
+  @ToStringJsonConverter()
   String get discordId;
   @override
   String get name;

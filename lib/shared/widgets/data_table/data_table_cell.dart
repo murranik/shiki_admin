@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shiki_admin/shared/constants/constants.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../features/theme/theme.dart';
@@ -24,6 +25,7 @@ class DataTableCell extends StatelessWidget {
       flex: flex,
       child: Container(
         height: 7.sp,
+        padding: const EdgeInsets.symmetric(horizontal: SpacingStatic.px5),
         alignment: Alignment.centerLeft,
         decoration: BoxDecoration(
           boxShadow: [

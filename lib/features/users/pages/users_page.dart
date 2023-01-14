@@ -38,40 +38,42 @@ class _UsersPageState extends State<UsersPage> {
                   ),
                 ],
               ),
-              SingleChildScrollView(
-                child: Column(
-                  children: loaded.users
-                      .map(
-                        (user) => Row(
-                          children: [
-                            DataTableCell(
-                              name: user.id.toString(),
-                              flex: 6,
-                            ),
-                            DataTableCell(
-                              name: user.discordId,
-                              flex: 22,
-                            ),
-                            DataTableCell(
-                              name: user.guildId,
-                              flex: 22,
-                            ),
-                            DataTableCell(
-                              name: user.name,
-                              flex: 20,
-                            ),
-                            DataTableTextFieldCell(
-                              name: user.prestigeLevel.toString(),
-                              flex: 20,
-                              editController: TextEditingController(
-                                text: user.prestigeLevel.toString(),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: loaded.users
+                        .map(
+                          (user) => Row(
+                            children: [
+                              DataTableCell(
+                                name: user.id.toString(),
+                                flex: 6,
                               ),
-                              save: () {},
-                            ),
-                          ],
-                        ),
-                      )
-                      .toList(),
+                              DataTableCell(
+                                name: user.discordId,
+                                flex: 22,
+                              ),
+                              DataTableCell(
+                                name: user.guildId,
+                                flex: 22,
+                              ),
+                              DataTableCell(
+                                name: user.name,
+                                flex: 20,
+                              ),
+                              DataTableTextFieldCell(
+                                name: user.prestigeLevel.toString(),
+                                flex: 20,
+                                editController: TextEditingController(
+                                  text: user.prestigeLevel.toString(),
+                                ),
+                                save: () {},
+                              ),
+                            ],
+                          ),
+                        )
+                        .toList(),
+                  ),
                 ),
               ),
             ],

@@ -1,12 +1,12 @@
 import 'package:sizer/sizer.dart';
 
 class SpacingStatic {
-  static const s5 = 5.0;
-  static const s10 = 10.0;
-  static const s15 = 15.0;
-  static const s20 = 20.0;
-  static const s25 = 25.0;
-  static const s30 = 30.0;
+  static const px5 = 5.0;
+  static const px10 = 10.0;
+  static const px15 = 15.0;
+  static const px20 = 20.0;
+  static const px25 = 25.0;
+  static const px30 = 30.0;
 }
 
 class SpacingScalable {
