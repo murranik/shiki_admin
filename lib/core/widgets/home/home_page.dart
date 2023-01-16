@@ -104,10 +104,11 @@ class _HomePagePageState extends State<HomePage> {
                     home: (home) => [const HomeRoute()],
                     users: (users) => [const UsersRoute()],
                     roles: (roles) => [const RolesRoute()],
+                    userRoles: (userRoles) => [const UserRolesRoute()],
+                    userManage: (userManage) => [const UserManageRoute()],
                     statistic: (statistic) => [const StatisticRoute()],
                     audit: (audit) => [const AuditRoute()],
                     settings: (settings) => [const SettingsRoute()],
-                    userRoles: (userRoles) => [const UserRolesRoute()],
                   ),
                 ),
               );

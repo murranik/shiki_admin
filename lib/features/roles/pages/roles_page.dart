@@ -25,8 +25,8 @@ class _RolesPageState extends State<RolesPage> {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: const [
-                  DataTableCell(name: "discordId", flex: 6),
-                  DataTableCell(name: "name", flex: 22),
+                  DataTableCell(name: "Discord Id", flex: 6),
+                  DataTableCell(name: "Name", flex: 22),
                 ],
               ),
               Expanded(

@@ -7,13 +7,13 @@ class DiscordBotEndpoints {
 
   static const guilds = "${Endpoint.get}SocketGuild";
 
-  static const get = Endpoint.get;
-
   static const roles = "${Endpoint.get}DiscordRole";
 
   static const users = "${Endpoint.get}DiscordUser";
 
   static const userRoles = "${Endpoint.get}UserRole";
+
+  static const userManage = "${Endpoint.get}UserManage";
 
   static const commandsHistory = "${Domains.base}Audit/Commands/{guildId}";
 

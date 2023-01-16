@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:shiki_admin/features/guilds/infrastructure/models/guild/guild.dart';
+import 'package:shiki_admin/features/user_manage/infrastructure/models/user_manage/user_manage.dart';
 import 'package:shiki_admin/features/user_roles/infrastructure/models/user_role.dart';
 
 import '../../../features/auth/infrastructure/data/admin/admin.dart';
@@ -31,4 +32,7 @@ abstract class DiscordBotApiClient {
 
   @GET(DiscordBotEndpoints.userRoles)
   Future<List<UserRole>> fetchUserRoles();
+
+  @GET(DiscordBotEndpoints.userManage)
+  Future<List<UserManage>> fetchUserManage();
 }

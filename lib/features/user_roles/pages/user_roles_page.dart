@@ -26,8 +26,8 @@ class _UserRolesPageState extends State<UserRolesPage> {
                 mainAxisSize: MainAxisSize.min,
                 children: const [
                   DataTableCell(name: "Id", flex: 6),
-                  DataTableCell(name: "DiscordId", flex: 22),
-                  DataTableCell(name: "GuildId", flex: 22),
+                  DataTableCell(name: "Discord Id", flex: 22),
+                  DataTableCell(name: "Guild Id", flex: 22),
                 ],
               ),
               Expanded(
@@ -42,11 +42,11 @@ class _UserRolesPageState extends State<UserRolesPage> {
                                 flex: 6,
                               ),
                               DataTableCell(
-                                name: userRole.roleId.toString(),
+                                name: userRole.discordRoleId,
                                 flex: 22,
                               ),
                               DataTableCell(
-                                name: userRole.userId.toString(),
+                                name: userRole.discordUserId,
                                 flex: 22,
                               ),
                             ],

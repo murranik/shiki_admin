@@ -3,6 +3,7 @@ enum HomeTabs {
   userRoles,
   users,
   roles,
+  userManage,
   statistic,
   audit,
   settings,

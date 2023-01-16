@@ -226,6 +226,7 @@ mixin _$HomeState {
     required TResult Function() users,
     required TResult Function() roles,
     required TResult Function() userRoles,
+    required TResult Function() userManage,
     required TResult Function() statistic,
     required TResult Function() audit,
     required TResult Function() settings,
@@ -237,6 +238,7 @@ mixin _$HomeState {
     TResult? Function()? users,
     TResult? Function()? roles,
     TResult? Function()? userRoles,
+    TResult? Function()? userManage,
     TResult? Function()? statistic,
     TResult? Function()? audit,
     TResult? Function()? settings,
@@ -248,6 +250,7 @@ mixin _$HomeState {
     TResult Function()? users,
     TResult Function()? roles,
     TResult Function()? userRoles,
+    TResult Function()? userManage,
     TResult Function()? statistic,
     TResult Function()? audit,
     TResult Function()? settings,
@@ -260,6 +263,7 @@ mixin _$HomeState {
     required TResult Function(Users value) users,
     required TResult Function(Roles value) roles,
     required TResult Function(UserRoles value) userRoles,
+    required TResult Function(UserManage value) userManage,
     required TResult Function(Statistic value) statistic,
     required TResult Function(Audit value) audit,
     required TResult Function(Settings value) settings,
@@ -271,6 +275,7 @@ mixin _$HomeState {
     TResult? Function(Users value)? users,
     TResult? Function(Roles value)? roles,
     TResult? Function(UserRoles value)? userRoles,
+    TResult? Function(UserManage value)? userManage,
     TResult? Function(Statistic value)? statistic,
     TResult? Function(Audit value)? audit,
     TResult? Function(Settings value)? settings,
@@ -282,6 +287,7 @@ mixin _$HomeState {
     TResult Function(Users value)? users,
     TResult Function(Roles value)? roles,
     TResult Function(UserRoles value)? userRoles,
+    TResult Function(UserManage value)? userManage,
     TResult Function(Statistic value)? statistic,
     TResult Function(Audit value)? audit,
     TResult Function(Settings value)? settings,
@@ -346,6 +352,7 @@ class _$Home implements Home {
     required TResult Function() users,
     required TResult Function() roles,
     required TResult Function() userRoles,
+    required TResult Function() userManage,
     required TResult Function() statistic,
     required TResult Function() audit,
     required TResult Function() settings,
@@ -360,6 +367,7 @@ class _$Home implements Home {
     TResult? Function()? users,
     TResult? Function()? roles,
     TResult? Function()? userRoles,
+    TResult? Function()? userManage,
     TResult? Function()? statistic,
     TResult? Function()? audit,
     TResult? Function()? settings,
@@ -374,6 +382,7 @@ class _$Home implements Home {
     TResult Function()? users,
     TResult Function()? roles,
     TResult Function()? userRoles,
+    TResult Function()? userManage,
     TResult Function()? statistic,
     TResult Function()? audit,
     TResult Function()? settings,
@@ -392,6 +401,7 @@ class _$Home implements Home {
     required TResult Function(Users value) users,
     required TResult Function(Roles value) roles,
     required TResult Function(UserRoles value) userRoles,
+    required TResult Function(UserManage value) userManage,
     required TResult Function(Statistic value) statistic,
     required TResult Function(Audit value) audit,
     required TResult Function(Settings value) settings,
@@ -406,6 +416,7 @@ class _$Home implements Home {
     TResult? Function(Users value)? users,
     TResult? Function(Roles value)? roles,
     TResult? Function(UserRoles value)? userRoles,
+    TResult? Function(UserManage value)? userManage,
     TResult? Function(Statistic value)? statistic,
     TResult? Function(Audit value)? audit,
     TResult? Function(Settings value)? settings,
@@ -420,6 +431,7 @@ class _$Home implements Home {
     TResult Function(Users value)? users,
     TResult Function(Roles value)? roles,
     TResult Function(UserRoles value)? userRoles,
+    TResult Function(UserManage value)? userManage,
     TResult Function(Statistic value)? statistic,
     TResult Function(Audit value)? audit,
     TResult Function(Settings value)? settings,
@@ -475,6 +487,7 @@ class _$Users implements Users {
     required TResult Function() users,
     required TResult Function() roles,
     required TResult Function() userRoles,
+    required TResult Function() userManage,
     required TResult Function() statistic,
     required TResult Function() audit,
     required TResult Function() settings,
@@ -489,6 +502,7 @@ class _$Users implements Users {
     TResult? Function()? users,
     TResult? Function()? roles,
     TResult? Function()? userRoles,
+    TResult? Function()? userManage,
     TResult? Function()? statistic,
     TResult? Function()? audit,
     TResult? Function()? settings,
@@ -503,6 +517,7 @@ class _$Users implements Users {
     TResult Function()? users,
     TResult Function()? roles,
     TResult Function()? userRoles,
+    TResult Function()? userManage,
     TResult Function()? statistic,
     TResult Function()? audit,
     TResult Function()? settings,
@@ -521,6 +536,7 @@ class _$Users implements Users {
     required TResult Function(Users value) users,
     required TResult Function(Roles value) roles,
     required TResult Function(UserRoles value) userRoles,
+    required TResult Function(UserManage value) userManage,
     required TResult Function(Statistic value) statistic,
     required TResult Function(Audit value) audit,
     required TResult Function(Settings value) settings,
@@ -535,6 +551,7 @@ class _$Users implements Users {
     TResult? Function(Users value)? users,
     TResult? Function(Roles value)? roles,
     TResult? Function(UserRoles value)? userRoles,
+    TResult? Function(UserManage value)? userManage,
     TResult? Function(Statistic value)? statistic,
     TResult? Function(Audit value)? audit,
     TResult? Function(Settings value)? settings,
@@ -549,6 +566,7 @@ class _$Users implements Users {
     TResult Function(Users value)? users,
     TResult Function(Roles value)? roles,
     TResult Function(UserRoles value)? userRoles,
+    TResult Function(UserManage value)? userManage,
     TResult Function(Statistic value)? statistic,
     TResult Function(Audit value)? audit,
     TResult Function(Settings value)? settings,
@@ -604,6 +622,7 @@ class _$Roles implements Roles {
     required TResult Function() users,
     required TResult Function() roles,
     required TResult Function() userRoles,
+    required TResult Function() userManage,
     required TResult Function() statistic,
     required TResult Function() audit,
     required TResult Function() settings,
@@ -618,6 +637,7 @@ class _$Roles implements Roles {
     TResult? Function()? users,
     TResult? Function()? roles,
     TResult? Function()? userRoles,
+    TResult? Function()? userManage,
     TResult? Function()? statistic,
     TResult? Function()? audit,
     TResult? Function()? settings,
@@ -632,6 +652,7 @@ class _$Roles implements Roles {
     TResult Function()? users,
     TResult Function()? roles,
     TResult Function()? userRoles,
+    TResult Function()? userManage,
     TResult Function()? statistic,
     TResult Function()? audit,
     TResult Function()? settings,
@@ -650,6 +671,7 @@ class _$Roles implements Roles {
     required TResult Function(Users value) users,
     required TResult Function(Roles value) roles,
     required TResult Function(UserRoles value) userRoles,
+    required TResult Function(UserManage value) userManage,
     required TResult Function(Statistic value) statistic,
     required TResult Function(Audit value) audit,
     required TResult Function(Settings value) settings,
@@ -664,6 +686,7 @@ class _$Roles implements Roles {
     TResult? Function(Users value)? users,
     TResult? Function(Roles value)? roles,
     TResult? Function(UserRoles value)? userRoles,
+    TResult? Function(UserManage value)? userManage,
     TResult? Function(Statistic value)? statistic,
     TResult? Function(Audit value)? audit,
     TResult? Function(Settings value)? settings,
@@ -678,6 +701,7 @@ class _$Roles implements Roles {
     TResult Function(Users value)? users,
     TResult Function(Roles value)? roles,
     TResult Function(UserRoles value)? userRoles,
+    TResult Function(UserManage value)? userManage,
     TResult Function(Statistic value)? statistic,
     TResult Function(Audit value)? audit,
     TResult Function(Settings value)? settings,
@@ -736,6 +760,7 @@ class _$UserRoles implements UserRoles {
     required TResult Function() users,
     required TResult Function() roles,
     required TResult Function() userRoles,
+    required TResult Function() userManage,
     required TResult Function() statistic,
     required TResult Function() audit,
     required TResult Function() settings,
@@ -750,6 +775,7 @@ class _$UserRoles implements UserRoles {
     TResult? Function()? users,
     TResult? Function()? roles,
     TResult? Function()? userRoles,
+    TResult? Function()? userManage,
     TResult? Function()? statistic,
     TResult? Function()? audit,
     TResult? Function()? settings,
@@ -764,6 +790,7 @@ class _$UserRoles implements UserRoles {
     TResult Function()? users,
     TResult Function()? roles,
     TResult Function()? userRoles,
+    TResult Function()? userManage,
     TResult Function()? statistic,
     TResult Function()? audit,
     TResult Function()? settings,
@@ -782,6 +809,7 @@ class _$UserRoles implements UserRoles {
     required TResult Function(Users value) users,
     required TResult Function(Roles value) roles,
     required TResult Function(UserRoles value) userRoles,
+    required TResult Function(UserManage value) userManage,
     required TResult Function(Statistic value) statistic,
     required TResult Function(Audit value) audit,
     required TResult Function(Settings value) settings,
@@ -796,6 +824,7 @@ class _$UserRoles implements UserRoles {
     TResult? Function(Users value)? users,
     TResult? Function(Roles value)? roles,
     TResult? Function(UserRoles value)? userRoles,
+    TResult? Function(UserManage value)? userManage,
     TResult? Function(Statistic value)? statistic,
     TResult? Function(Audit value)? audit,
     TResult? Function(Settings value)? settings,
@@ -810,6 +839,7 @@ class _$UserRoles implements UserRoles {
     TResult Function(Users value)? users,
     TResult Function(Roles value)? roles,
     TResult Function(UserRoles value)? userRoles,
+    TResult Function(UserManage value)? userManage,
     TResult Function(Statistic value)? statistic,
     TResult Function(Audit value)? audit,
     TResult Function(Settings value)? settings,
@@ -824,6 +854,144 @@ class _$UserRoles implements UserRoles {
 
 abstract class UserRoles implements HomeState {
   const factory UserRoles() = _$UserRoles;
+}
+
+/// @nodoc
+abstract class _$$UserManageCopyWith<$Res> {
+  factory _$$UserManageCopyWith(
+          _$UserManage value, $Res Function(_$UserManage) then) =
+      __$$UserManageCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UserManageCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$UserManage>
+    implements _$$UserManageCopyWith<$Res> {
+  __$$UserManageCopyWithImpl(
+      _$UserManage _value, $Res Function(_$UserManage) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UserManage implements UserManage {
+  const _$UserManage();
+
+  @override
+  String toString() {
+    return 'HomeState.userManage()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UserManage);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() home,
+    required TResult Function() users,
+    required TResult Function() roles,
+    required TResult Function() userRoles,
+    required TResult Function() userManage,
+    required TResult Function() statistic,
+    required TResult Function() audit,
+    required TResult Function() settings,
+  }) {
+    return userManage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? home,
+    TResult? Function()? users,
+    TResult? Function()? roles,
+    TResult? Function()? userRoles,
+    TResult? Function()? userManage,
+    TResult? Function()? statistic,
+    TResult? Function()? audit,
+    TResult? Function()? settings,
+  }) {
+    return userManage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? home,
+    TResult Function()? users,
+    TResult Function()? roles,
+    TResult Function()? userRoles,
+    TResult Function()? userManage,
+    TResult Function()? statistic,
+    TResult Function()? audit,
+    TResult Function()? settings,
+    required TResult orElse(),
+  }) {
+    if (userManage != null) {
+      return userManage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Home value) home,
+    required TResult Function(Users value) users,
+    required TResult Function(Roles value) roles,
+    required TResult Function(UserRoles value) userRoles,
+    required TResult Function(UserManage value) userManage,
+    required TResult Function(Statistic value) statistic,
+    required TResult Function(Audit value) audit,
+    required TResult Function(Settings value) settings,
+  }) {
+    return userManage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Home value)? home,
+    TResult? Function(Users value)? users,
+    TResult? Function(Roles value)? roles,
+    TResult? Function(UserRoles value)? userRoles,
+    TResult? Function(UserManage value)? userManage,
+    TResult? Function(Statistic value)? statistic,
+    TResult? Function(Audit value)? audit,
+    TResult? Function(Settings value)? settings,
+  }) {
+    return userManage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Home value)? home,
+    TResult Function(Users value)? users,
+    TResult Function(Roles value)? roles,
+    TResult Function(UserRoles value)? userRoles,
+    TResult Function(UserManage value)? userManage,
+    TResult Function(Statistic value)? statistic,
+    TResult Function(Audit value)? audit,
+    TResult Function(Settings value)? settings,
+    required TResult orElse(),
+  }) {
+    if (userManage != null) {
+      return userManage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserManage implements HomeState {
+  const factory UserManage() = _$UserManage;
 }
 
 /// @nodoc
@@ -868,6 +1036,7 @@ class _$Statistic implements Statistic {
     required TResult Function() users,
     required TResult Function() roles,
     required TResult Function() userRoles,
+    required TResult Function() userManage,
     required TResult Function() statistic,
     required TResult Function() audit,
     required TResult Function() settings,
@@ -882,6 +1051,7 @@ class _$Statistic implements Statistic {
     TResult? Function()? users,
     TResult? Function()? roles,
     TResult? Function()? userRoles,
+    TResult? Function()? userManage,
     TResult? Function()? statistic,
     TResult? Function()? audit,
     TResult? Function()? settings,
@@ -896,6 +1066,7 @@ class _$Statistic implements Statistic {
     TResult Function()? users,
     TResult Function()? roles,
     TResult Function()? userRoles,
+    TResult Function()? userManage,
     TResult Function()? statistic,
     TResult Function()? audit,
     TResult Function()? settings,
@@ -914,6 +1085,7 @@ class _$Statistic implements Statistic {
     required TResult Function(Users value) users,
     required TResult Function(Roles value) roles,
     required TResult Function(UserRoles value) userRoles,
+    required TResult Function(UserManage value) userManage,
     required TResult Function(Statistic value) statistic,
     required TResult Function(Audit value) audit,
     required TResult Function(Settings value) settings,
@@ -928,6 +1100,7 @@ class _$Statistic implements Statistic {
     TResult? Function(Users value)? users,
     TResult? Function(Roles value)? roles,
     TResult? Function(UserRoles value)? userRoles,
+    TResult? Function(UserManage value)? userManage,
     TResult? Function(Statistic value)? statistic,
     TResult? Function(Audit value)? audit,
     TResult? Function(Settings value)? settings,
@@ -942,6 +1115,7 @@ class _$Statistic implements Statistic {
     TResult Function(Users value)? users,
     TResult Function(Roles value)? roles,
     TResult Function(UserRoles value)? userRoles,
+    TResult Function(UserManage value)? userManage,
     TResult Function(Statistic value)? statistic,
     TResult Function(Audit value)? audit,
     TResult Function(Settings value)? settings,
@@ -997,6 +1171,7 @@ class _$Audit implements Audit {
     required TResult Function() users,
     required TResult Function() roles,
     required TResult Function() userRoles,
+    required TResult Function() userManage,
     required TResult Function() statistic,
     required TResult Function() audit,
     required TResult Function() settings,
@@ -1011,6 +1186,7 @@ class _$Audit implements Audit {
     TResult? Function()? users,
     TResult? Function()? roles,
     TResult? Function()? userRoles,
+    TResult? Function()? userManage,
     TResult? Function()? statistic,
     TResult? Function()? audit,
     TResult? Function()? settings,
@@ -1025,6 +1201,7 @@ class _$Audit implements Audit {
     TResult Function()? users,
     TResult Function()? roles,
     TResult Function()? userRoles,
+    TResult Function()? userManage,
     TResult Function()? statistic,
     TResult Function()? audit,
     TResult Function()? settings,
@@ -1043,6 +1220,7 @@ class _$Audit implements Audit {
     required TResult Function(Users value) users,
     required TResult Function(Roles value) roles,
     required TResult Function(UserRoles value) userRoles,
+    required TResult Function(UserManage value) userManage,
     required TResult Function(Statistic value) statistic,
     required TResult Function(Audit value) audit,
     required TResult Function(Settings value) settings,
@@ -1057,6 +1235,7 @@ class _$Audit implements Audit {
     TResult? Function(Users value)? users,
     TResult? Function(Roles value)? roles,
     TResult? Function(UserRoles value)? userRoles,
+    TResult? Function(UserManage value)? userManage,
     TResult? Function(Statistic value)? statistic,
     TResult? Function(Audit value)? audit,
     TResult? Function(Settings value)? settings,
@@ -1071,6 +1250,7 @@ class _$Audit implements Audit {
     TResult Function(Users value)? users,
     TResult Function(Roles value)? roles,
     TResult Function(UserRoles value)? userRoles,
+    TResult Function(UserManage value)? userManage,
     TResult Function(Statistic value)? statistic,
     TResult Function(Audit value)? audit,
     TResult Function(Settings value)? settings,
@@ -1128,6 +1308,7 @@ class _$Settings implements Settings {
     required TResult Function() users,
     required TResult Function() roles,
     required TResult Function() userRoles,
+    required TResult Function() userManage,
     required TResult Function() statistic,
     required TResult Function() audit,
     required TResult Function() settings,
@@ -1142,6 +1323,7 @@ class _$Settings implements Settings {
     TResult? Function()? users,
     TResult? Function()? roles,
     TResult? Function()? userRoles,
+    TResult? Function()? userManage,
     TResult? Function()? statistic,
     TResult? Function()? audit,
     TResult? Function()? settings,
@@ -1156,6 +1338,7 @@ class _$Settings implements Settings {
     TResult Function()? users,
     TResult Function()? roles,
     TResult Function()? userRoles,
+    TResult Function()? userManage,
     TResult Function()? statistic,
     TResult Function()? audit,
     TResult Function()? settings,
@@ -1174,6 +1357,7 @@ class _$Settings implements Settings {
     required TResult Function(Users value) users,
     required TResult Function(Roles value) roles,
     required TResult Function(UserRoles value) userRoles,
+    required TResult Function(UserManage value) userManage,
     required TResult Function(Statistic value) statistic,
     required TResult Function(Audit value) audit,
     required TResult Function(Settings value) settings,
@@ -1188,6 +1372,7 @@ class _$Settings implements Settings {
     TResult? Function(Users value)? users,
     TResult? Function(Roles value)? roles,
     TResult? Function(UserRoles value)? userRoles,
+    TResult? Function(UserManage value)? userManage,
     TResult? Function(Statistic value)? statistic,
     TResult? Function(Audit value)? audit,
     TResult? Function(Settings value)? settings,
@@ -1202,6 +1387,7 @@ class _$Settings implements Settings {
     TResult Function(Users value)? users,
     TResult Function(Roles value)? roles,
     TResult Function(UserRoles value)? userRoles,
+    TResult Function(UserManage value)? userManage,
     TResult Function(Statistic value)? statistic,
     TResult Function(Audit value)? audit,
     TResult Function(Settings value)? settings,

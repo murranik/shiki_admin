@@ -21,10 +21,8 @@ UserRole _$UserRoleFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserRole {
   int get id => throw _privateConstructorUsedError;
-  @ToStringJsonConverter()
-  String get userId => throw _privateConstructorUsedError;
-  @ToStringJsonConverter()
-  String get roleId => throw _privateConstructorUsedError;
+  String get discordUserId => throw _privateConstructorUsedError;
+  String get discordRoleId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,10 +35,7 @@ abstract class $UserRoleCopyWith<$Res> {
   factory $UserRoleCopyWith(UserRole value, $Res Function(UserRole) then) =
       _$UserRoleCopyWithImpl<$Res, UserRole>;
   @useResult
-  $Res call(
-      {int id,
-      @ToStringJsonConverter() String userId,
-      @ToStringJsonConverter() String roleId});
+  $Res call({int id, String discordUserId, String discordRoleId});
 }
 
 /// @nodoc
@@ -57,21 +52,21 @@ class _$UserRoleCopyWithImpl<$Res, $Val extends UserRole>
   @override
   $Res call({
     Object? id = null,
-    Object? userId = null,
-    Object? roleId = null,
+    Object? discordUserId = null,
+    Object? discordRoleId = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
+      discordUserId: null == discordUserId
+          ? _value.discordUserId
+          : discordUserId // ignore: cast_nullable_to_non_nullable
               as String,
-      roleId: null == roleId
-          ? _value.roleId
-          : roleId // ignore: cast_nullable_to_non_nullable
+      discordRoleId: null == discordRoleId
+          ? _value.discordRoleId
+          : discordRoleId // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -84,10 +79,7 @@ abstract class _$$_UserRoleCopyWith<$Res> implements $UserRoleCopyWith<$Res> {
       __$$_UserRoleCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int id,
-      @ToStringJsonConverter() String userId,
-      @ToStringJsonConverter() String roleId});
+  $Res call({int id, String discordUserId, String discordRoleId});
 }
 
 /// @nodoc
@@ -102,21 +94,21 @@ class __$$_UserRoleCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? userId = null,
-    Object? roleId = null,
+    Object? discordUserId = null,
+    Object? discordRoleId = null,
   }) {
     return _then(_$_UserRole(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
+      discordUserId: null == discordUserId
+          ? _value.discordUserId
+          : discordUserId // ignore: cast_nullable_to_non_nullable
               as String,
-      roleId: null == roleId
-          ? _value.roleId
-          : roleId // ignore: cast_nullable_to_non_nullable
+      discordRoleId: null == discordRoleId
+          ? _value.discordRoleId
+          : discordRoleId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -127,8 +119,8 @@ class __$$_UserRoleCopyWithImpl<$Res>
 class _$_UserRole implements _UserRole {
   const _$_UserRole(
       {required this.id,
-      @ToStringJsonConverter() required this.userId,
-      @ToStringJsonConverter() required this.roleId});
+      required this.discordUserId,
+      required this.discordRoleId});
 
   factory _$_UserRole.fromJson(Map<String, dynamic> json) =>
       _$$_UserRoleFromJson(json);
@@ -136,15 +128,13 @@ class _$_UserRole implements _UserRole {
   @override
   final int id;
   @override
-  @ToStringJsonConverter()
-  final String userId;
+  final String discordUserId;
   @override
-  @ToStringJsonConverter()
-  final String roleId;
+  final String discordRoleId;
 
   @override
   String toString() {
-    return 'UserRole(id: $id, userId: $userId, roleId: $roleId)';
+    return 'UserRole(id: $id, discordUserId: $discordUserId, discordRoleId: $discordRoleId)';
   }
 
   @override
@@ -153,13 +143,16 @@ class _$_UserRole implements _UserRole {
         (other.runtimeType == runtimeType &&
             other is _$_UserRole &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.roleId, roleId) || other.roleId == roleId));
+            (identical(other.discordUserId, discordUserId) ||
+                other.discordUserId == discordUserId) &&
+            (identical(other.discordRoleId, discordRoleId) ||
+                other.discordRoleId == discordRoleId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, userId, roleId);
+  int get hashCode =>
+      Object.hash(runtimeType, id, discordUserId, discordRoleId);
 
   @JsonKey(ignore: true)
   @override
@@ -178,19 +171,17 @@ class _$_UserRole implements _UserRole {
 abstract class _UserRole implements UserRole {
   const factory _UserRole(
       {required final int id,
-      @ToStringJsonConverter() required final String userId,
-      @ToStringJsonConverter() required final String roleId}) = _$_UserRole;
+      required final String discordUserId,
+      required final String discordRoleId}) = _$_UserRole;
 
   factory _UserRole.fromJson(Map<String, dynamic> json) = _$_UserRole.fromJson;
 
   @override
   int get id;
   @override
-  @ToStringJsonConverter()
-  String get userId;
+  String get discordUserId;
   @override
-  @ToStringJsonConverter()
-  String get roleId;
+  String get discordRoleId;
   @override
   @JsonKey(ignore: true)
   _$$_UserRoleCopyWith<_$_UserRole> get copyWith =>

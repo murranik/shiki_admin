@@ -7,12 +7,11 @@ part of 'role.dart';
 // **************************************************************************
 
 _$_Role _$$_RoleFromJson(Map<String, dynamic> json) => _$_Role(
-      discordId:
-          const ToStringJsonConverter().fromJson(json['discordId'] as int),
+      discordId: json['discordId'] as String,
       name: json['name'] as String,
     );
 
 Map<String, dynamic> _$$_RoleToJson(_$_Role instance) => <String, dynamic>{
-      'discordId': const ToStringJsonConverter().toJson(instance.discordId),
+      'discordId': instance.discordId,
       'name': instance.name,
     };

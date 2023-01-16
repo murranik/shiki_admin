@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_role.dart';
+part of 'user_manage.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UserRole _$$_UserRoleFromJson(Map<String, dynamic> json) => _$_UserRole(
-      id: json['id'] as int,
+_$_UserManage _$$_UserManageFromJson(Map<String, dynamic> json) =>
+    _$_UserManage(
       discordUserId: json['discordUserId'] as String,
-      discordRoleId: json['discordRoleId'] as String,
+      rolesIds:
+          (json['rolesIds'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$_UserRoleToJson(_$_UserRole instance) =>
+Map<String, dynamic> _$$_UserManageToJson(_$_UserManage instance) =>
     <String, dynamic>{
-      'id': instance.id,
       'discordUserId': instance.discordUserId,
-      'discordRoleId': instance.discordRoleId,
+      'rolesIds': instance.rolesIds,
     };
